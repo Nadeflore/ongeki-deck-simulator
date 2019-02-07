@@ -1,2 +1,2 @@
 # ongeki-calc
-Ongeki cards attack calculator
+Ongeki cards calculator
