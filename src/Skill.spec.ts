@@ -8,26 +8,20 @@ import 'mocha';
 describe('Skill', () => {
     describe('calculateSelfIncreasePercent()', () => {
         it('should return 0 if skill is boost type', () => {
-            const skill = new Skill(SkillType.BOOST)
-            skill.percentage = 10
+            const skill = new Skill(SkillType.BOOST, 10)
             expect(skill.calculateSelfIncreasePercent(true, null)).to.equal(0)
         })
         it('should return percentage when there is no condition', () => {
-            const skill = new Skill(SkillType.GUARD)
-            skill.percentage = 5
+            const skill = new Skill(SkillType.GUARD, 5)
             expect(skill.calculateSelfIncreasePercent(false, null)).to.equal(5)
         })
         it('should return 0 if skill is only active during boss phase, while not in boss phase', () => {
-            const skill = new Skill(SkillType.ATTACK)
-            skill.percentage = 15
-            skill.boss = true
+            const skill = new Skill(SkillType.ATTACK, 15, true)
             expect(skill.calculateSelfIncreasePercent(false, null)).to.equal(0)
             expect(skill.calculateSelfIncreasePercent(true, null)).to.equal(15)
         })
         it('should return percentage multiplied by the number of card matching the conditon', () => {
-            const skill = new Skill(SkillType.ATTACK)
-            skill.percentage = 7
-            skill.boss = true
+            const skill = new Skill(SkillType.ATTACK, 7, true)
             skill.condition = new CardMatcher(null, null, '結城 莉玖')
 
             // No deck specified, condition is ignored, return percentage
@@ -54,14 +48,12 @@ describe('Skill', () => {
     })
     describe('calculateBoostPercent()', () => {
         it('should return 0 if skill is not boost type', () => {
-            const skill = new Skill(SkillType.ASSIST)
-            skill.percentage = 5
+            const skill = new Skill(SkillType.ASSIST, 5)
 
             expect(skill.calculateBoostPercent(true, new Card())).to.equal(0)
         })
         it('should return percentage if condition match card', () => {
-            const skill = new Skill(SkillType.BOOST)
-            skill.percentage = 14
+            const skill = new Skill(SkillType.BOOST, 14)
             skill.condition = new CardMatcher(SkillType.ATTACK, null, null)
 
             const card = new Card()
@@ -76,9 +68,7 @@ describe('Skill', () => {
             expect(skill.calculateBoostPercent(true, card)).to.equal(14)
         })
         it('should return 0 if skill is only active during boss phase, while not in boss phase', () => {
-            const skill = new Skill(SkillType.BOOST)
-            skill.percentage = 14
-            skill.boss = true
+            const skill = new Skill(SkillType.BOOST, 14, true)
             skill.condition = new CardMatcher(SkillType.ATTACK, null, null)
 
             const card = new Card()

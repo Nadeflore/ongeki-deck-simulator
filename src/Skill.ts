@@ -20,8 +20,10 @@ export class Skill {
     // Condition for boost, or condition multiplier (optional) for other skill type
     condition: CardMatcher
 
-    constructor(type: SkillType) {
+    constructor(type: SkillType, percentage?: number, boss: boolean = false) {
         this.type = type
+        this.percentage = percentage
+        this.boss = boss
     }
 
     /**

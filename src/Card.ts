@@ -15,10 +15,15 @@ export enum Attribute {
 }
 
 export class Card {
+    // Card rarity: N R SR or SSR
     rarity: Rarity
+    // True if this is an event card
     event: boolean
+    // Card level, minimum 1, maximum 100 for N card, 70 for others
     level: number
+    // FIRE, AQUA or LEAF
     attribute: Attribute
+    // Card Skill
     skill: Skill
     characterName: string
     deck: Deck
@@ -29,6 +34,10 @@ export class Card {
         this.event = event
     }
 
+    /**
+     * Calculate base attack of the card, whithout considering the skills
+     * @return base attack
+     */
     calculateBaseAttack(): number {
         let attack
 
@@ -65,6 +74,45 @@ export class Card {
             attack -= 5
         }
         return attack
+    }
+
+    /**
+     * Calculate percent of self increase from own skill
+     * @param boss True during boss phase
+     * @return Self increase in percent
+     */
+    calculateSelfIncreasePercent(boss: boolean): number {
+        return this.skill.calculateSelfIncreasePercent(boss, this.deck)
+    }
+
+    /**
+     * Calculate boost values for each card in deck
+     * @param boss True during boss phase
+     * @return array with boost percent value for each card
+     */
+    calculateBoostPercents(boss: boolean): number[] {
+        return this.deck.cards.map(card => {
+            // Check for each card in deck if its boosting this card
+            return card.skill.calculateBoostPercent(boss, this)
+        })
+    }
+
+    /**
+     * Calculate attack while considering own skill and boost skills from other cards
+     * @param boss True during boss phase
+     * @return attack
+     */
+    calculateAttackWithSkills(boss: boolean): number {
+        const baseAttack = this.calculateBaseAttack()
+        let attack = baseAttack
+        // Add self increase
+        attack += baseAttack * this.calculateSelfIncreasePercent(boss) / 100
+        // Add boosts
+        for (let boostPercent of this.calculateBoostPercents(boss)) {
+            attack += baseAttack * boostPercent / 100
+        }
+
+        return Math.ceil(attack)
     }
 }
 
