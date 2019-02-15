@@ -1,10 +1,11 @@
-import { Card, Rarity } from './Card';
-import { expect } from 'chai';
+import { Card, Rarity } from './Card'
+
+import { expect } from 'chai'
 import 'mocha';
 
 describe('Card', () => {
     describe('calculateBaseAttack()', () => {
-        it('should return attack for known levels for N card', () => {
+        it('should return known attack for N card', () => {
             expect(new Card(Rarity.N, 1).calculateBaseAttack()).to.equal(50)
             expect(new Card(Rarity.N, 10).calculateBaseAttack()).to.equal(77)
             expect(new Card(Rarity.N, 50).calculateBaseAttack()).to.equal(197)
@@ -19,7 +20,7 @@ describe('Card', () => {
             expect(new Card(Rarity.N, 95).calculateBaseAttack()).to.equal(332)
             expect(new Card(Rarity.N, 100).calculateBaseAttack()).to.equal(347)
         })
-        it('should return attack for known levels for R card', () => {
+        it('should return known attack for R card', () => {
             expect(new Card(Rarity.R, 1).calculateBaseAttack()).to.equal(50)
             expect(new Card(Rarity.R, 10).calculateBaseAttack()).to.equal(77)
             expect(new Card(Rarity.R, 50).calculateBaseAttack()).to.equal(197)
@@ -28,7 +29,7 @@ describe('Card', () => {
             expect(new Card(Rarity.R, 65).calculateBaseAttack()).to.equal(242)
             expect(new Card(Rarity.R, 70).calculateBaseAttack()).to.equal(257)
         })
-        it('should return attack for known levels for SR card', () => {
+        it('should return known attack for SR card', () => {
             expect(new Card(Rarity.SR, 1).calculateBaseAttack()).to.equal(55)
             expect(new Card(Rarity.SR, 3).calculateBaseAttack()).to.equal(62)
             expect(new Card(Rarity.SR, 10).calculateBaseAttack()).to.equal(86)
@@ -41,7 +42,7 @@ describe('Card', () => {
             expect(new Card(Rarity.SR, 65).calculateBaseAttack()).to.equal(272)
             expect(new Card(Rarity.SR, 70).calculateBaseAttack()).to.equal(287)
         })
-        it('should return attack for known levels for SSR card', () => {
+        it('should return known attack for SSR card', () => {
             expect(new Card(Rarity.SSR, 1).calculateBaseAttack()).to.equal(60)
             expect(new Card(Rarity.SSR, 10).calculateBaseAttack()).to.equal(96)
             expect(new Card(Rarity.SSR, 50).calculateBaseAttack()).to.equal(257)
@@ -52,7 +53,7 @@ describe('Card', () => {
             expect(new Card(Rarity.SSR, 65).calculateBaseAttack()).to.equal(307)
             expect(new Card(Rarity.SSR, 70).calculateBaseAttack()).to.equal(317)
         })
-        it('should return known attack for event cards', () => {
+        it('should return known attack for event card', () => {
             expect(new Card(Rarity.R, 2, true).calculateBaseAttack()).to.equal(53)
             expect(new Card(Rarity.R, 9, true).calculateBaseAttack()).to.equal(74)
             expect(new Card(Rarity.SR, 3, true).calculateBaseAttack()).to.equal(57)
