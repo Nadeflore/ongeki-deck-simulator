@@ -8,9 +8,9 @@ export enum Rarity {
 }
 
 export enum Attribute {
-    FIRE = 1,
-    LEAF,
-    AQUA
+    FIRE = 3,
+    LEAF = 2,
+    AQUA = 1
 
 }
 
@@ -78,7 +78,7 @@ export class Card {
 
     /**
      * Calculate percent of self increase from own skill
-     * @param boss True during boss phase
+     * @param boss If true, calculate increase during boss phase
      * @return Self increase in percent
      */
     calculateSelfIncreasePercent(boss: boolean): number {
@@ -87,8 +87,8 @@ export class Card {
 
     /**
      * Calculate boost values for each card in deck
-     * @param boss True during boss phase
-     * @return array with boost percent value for each card
+     * @param boss If true, calculate boost during boss phase
+     * @return Array with boost percent value for each card
      */
     calculateBoostPercents(boss: boolean): number[] {
         return this.deck.cards.map(card => {
@@ -99,7 +99,7 @@ export class Card {
 
     /**
      * Calculate attack while considering own skill and boost skills from other cards
-     * @param boss True during boss phase
+     * @param boss If true, calculate attack during boss phase
      * @return attack
      */
     calculateAttackWithSkills(boss: boolean): number {
@@ -113,6 +113,34 @@ export class Card {
         }
 
         return Math.ceil(attack)
+    }
+
+    /**
+     * Compare this card attribute to the given attribute
+     * @param attribute Attribute to compare to
+     * @return Result of comparison:
+     *         -  1 if this card attribute is effective against given attribute 
+     *         -  0 if this card attribute is same as given attribute 
+     *         - -1 if this card attribute is not very effective again given attribute
+     */
+    compareAttribute(attribute: Attribute): number {
+        let result = this.attribute - attribute
+        if (result === 2) {
+            result = -1
+        } else if (result === -2) {
+            result = 1
+        }
+        return result
+    }
+
+    /**
+     * Calculate attack of this card against an enemy of given attribute
+     * @param boss If true, calculate attack during boss phase
+     * @param attribute Attribute of the enemy
+     * @return Attack agains this ennemy
+     */
+    calculateAttackAgainstEnemy(boss: boolean, attribute: Attribute) {
+        return Math.round(this.calculateAttackWithSkills(boss) * (1 + this.compareAttribute(attribute) / 10))
     }
 }
 

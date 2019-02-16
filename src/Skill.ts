@@ -28,7 +28,7 @@ export class Skill {
 
     /**
      * Calculate self increase for given boss condition and deck
-     * @param boss True during boss phase
+     * @param boss If true, calculate increase during boss phase
      * @param deck Used for skill with condition
      * @return Percentage of self increase
      */
@@ -61,7 +61,7 @@ export class Skill {
 
     /**
      * Calculate boost increase for given boss condition and card
-     * @param boss True during boss phase
+     * @param boss If true, calculate boost during boss phase
      * @param card Card for which we want boost percentage
      * @return Percentage of boost
      */

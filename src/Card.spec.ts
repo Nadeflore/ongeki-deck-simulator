@@ -131,4 +131,66 @@ describe('Card', () => {
             expect(card1.calculateAttackWithSkills(true)).to.equal(240)
         })
     })
+    describe('compareAttribute()', () => {
+        it('should return 0 when same attribute is given', () => {
+            const card = new Card()
+            card.attribute = Attribute.FIRE
+            expect(card.compareAttribute(Attribute.FIRE)).to.equal(0)
+            card.attribute = Attribute.AQUA
+            expect(card.compareAttribute(Attribute.AQUA)).to.equal(0)
+            card.attribute = Attribute.LEAF
+            expect(card.compareAttribute(Attribute.LEAF)).to.equal(0)
+        })
+        it('should return 1 when card attribute is effective', () => {
+            const card = new Card()
+            card.attribute = Attribute.FIRE
+            expect(card.compareAttribute(Attribute.LEAF)).to.equal(1)
+            card.attribute = Attribute.AQUA
+            expect(card.compareAttribute(Attribute.FIRE)).to.equal(1)
+            card.attribute = Attribute.LEAF
+            expect(card.compareAttribute(Attribute.AQUA)).to.equal(1)
+        })
+        it('should return -1 when card attribute is not effective', () => {
+            const card = new Card()
+            card.attribute = Attribute.FIRE
+            expect(card.compareAttribute(Attribute.AQUA)).to.equal(-1)
+            card.attribute = Attribute.AQUA
+            expect(card.compareAttribute(Attribute.LEAF)).to.equal(-1)
+            card.attribute = Attribute.LEAF
+            expect(card.compareAttribute(Attribute.FIRE)).to.equal(-1)
+        })
+    })
+    describe('calculateAttackAgainstEnemy()', () => {
+        // Using this video as reference: https://www.youtube.com/watch?v=4p_EGhuDi6A
+        it('should return known attack for a given deck', () => {
+            const card1 = new Card(Rarity.SSR, 43)
+            card1.attribute = Attribute.FIRE
+            card1.skill = new Skill(SkillType.ATTACK, 7, true)
+            card1.skill.condition = new CardMatcher(null, null, '結城 莉玖')
+            card1.characterName = '結城 莉玖'
+
+            const card2 = new Card(Rarity.SSR, 43)
+            card2.attribute = Attribute.AQUA
+            card2.skill = new Skill(SkillType.ATTACK, 20, true)
+            card2.characterName = '三角 葵'
+
+            const card3 = new Card(Rarity.SR, 40)
+            card3.attribute = Attribute.LEAF
+            card3.skill = new Skill(SkillType.ATTACK, 15, true)
+            card3.characterName = '藍原 椿'
+
+            const deck = new Deck(card1, card2, card3)
+
+            const enemyAttribute = Attribute.FIRE
+            
+            // Not during boss phase
+            expect(card1.calculateAttackAgainstEnemy(false, enemyAttribute)).to.equal(228)
+            expect(card2.calculateAttackAgainstEnemy(false, enemyAttribute)).to.equal(251)
+            expect(card3.calculateAttackAgainstEnemy(false, enemyAttribute)).to.equal(172)
+            // During boss phase
+            expect(card1.calculateAttackAgainstEnemy(true, enemyAttribute)).to.equal(244)
+            expect(card2.calculateAttackAgainstEnemy(true, enemyAttribute)).to.equal(301)
+            expect(card3.calculateAttackAgainstEnemy(true, enemyAttribute)).to.equal(198)
+        })
+    })
 })
