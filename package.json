@@ -1,21 +1,21 @@
 {
-  "name": "ongeki-calc",
+  "name": "ongeki-deck-simulator",
   "version": "1.0.0",
-  "description": "Ongeki cards calculator",
+  "description": "Tool calculating ongeki deck attack",
   "main": "index.js",
   "scripts": {
     "test": "mocha -r ts-node/register src/**/*.spec.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nadeflore/ongeki-calc.git"
+    "url": "git+https://github.com/Nadeflore/ongeki-deck-simulator.git"
   },
   "author": "Nadeflore",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Nadeflore/ongeki-calc/issues"
+    "url": "https://github.com/Nadeflore/ongeki-deck-simulator/issues"
   },
-  "homepage": "https://github.com/Nadeflore/ongeki-calc#readme",
+  "homepage": "https://github.com/Nadeflore/ongeki-deck-simulator#readme",
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.5",
