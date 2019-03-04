@@ -19,13 +19,20 @@ export class Card {
     rarity: Rarity
     // True if this is an event card
     event: boolean
-    // Card level, minimum 1, maximum 100 for N card, 70 for others
-    level: number
     // FIRE, AQUA or LEAF
     attribute: Attribute
-    // Card Skill
-    skill: Skill
+    // Card base skill
+    baseSkill: Skill
+    // Card upgraded skill
+    choukaikaSkill: Skill
+    // Character full name
     characterName: string
+
+    // Card level, minimum 1, maximum 100 for N card, 70 for others
+    level: number
+    // Choukaika, true when skill has been upgraded
+    choukaika: boolean
+    // Contains reference to all cards in deck (including this one)
     deck: Deck
 
     constructor(rarity?: Rarity, level?: number, event: boolean = false) {
@@ -74,6 +81,19 @@ export class Card {
             attack -= 5
         }
         return attack
+    }
+
+    /**
+     * Skill accessor
+     * @return Base skill when choukaika is false,
+     *         choukaika skill when choukaika is true.
+     */
+    get skill() {
+        if (this.choukaika) {
+            return this.choukaikaSkill
+        } else {
+            return this.baseSkill
+        }
     }
 
     /**

@@ -57,12 +57,12 @@ describe('Skill', () => {
             skill.condition = new CardMatcher(SkillType.ATTACK, null, null)
 
             const card = new Card()
-            card.skill = new Skill(SkillType.GUARD)
+            card.baseSkill = new Skill(SkillType.GUARD)
             
             // card does not match condition, should return 0
             expect(skill.calculateBoostPercent(true, card)).to.equal(0)
 
-            card.skill = new Skill(SkillType.ATTACK)
+            card.baseSkill = new Skill(SkillType.ATTACK)
 
             // Card match condition, should return percent
             expect(skill.calculateBoostPercent(true, card)).to.equal(14)
@@ -72,7 +72,7 @@ describe('Skill', () => {
             skill.condition = new CardMatcher(SkillType.ATTACK, null, null)
 
             const card = new Card()
-            card.skill = new Skill(SkillType.ATTACK)
+            card.baseSkill = new Skill(SkillType.ATTACK)
 
             expect(skill.calculateBoostPercent(false, card)).to.equal(0)
             expect(skill.calculateBoostPercent(true, card)).to.equal(14)

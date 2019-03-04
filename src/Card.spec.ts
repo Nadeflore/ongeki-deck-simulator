@@ -63,21 +63,36 @@ describe('Card', () => {
             expect(new Card(Rarity.SSR, 23, true).calculateBaseAttack()).to.equal(143)
         })
     })
+    describe('calculateSelfIncreasePercent()', () => {
+        it('should return SelfIncrease percent based on active skill', () => {
+            const card = new Card(Rarity.SSR, 70, true)
+            card.attribute = Attribute.AQUA
+            card.baseSkill = new Skill(SkillType.ATTACK, 17, false)
+            card.choukaikaSkill = new Skill(SkillType.ATTACK, 20, false)
+
+            // Not choukaika state
+            expect(card.calculateSelfIncreasePercent(false)).to.equal(17)
+
+            // Choukaika state
+            card.choukaika = true
+            expect(card.calculateSelfIncreasePercent(false)).to.equal(20)
+        })
+    })
     describe('calculateBoostPercents()', () => {
         it('should return boost percent for each card in deck', () => {
             const card1 = new Card(Rarity.SSR, 50, true)
             card1.attribute = Attribute.AQUA
-            card1.skill = new Skill(SkillType.ATTACK, 17, true)
+            card1.baseSkill = new Skill(SkillType.ATTACK, 17, true)
 
             const card2 = new Card(Rarity.SSR, 50, true)
             card2.attribute = Attribute.AQUA
-            card2.skill = new Skill(SkillType.BOOST, 15)
-            card2.skill.condition = new CardMatcher(SkillType.ATTACK, null, null) 
+            card2.baseSkill = new Skill(SkillType.BOOST, 15)
+            card2.baseSkill.condition = new CardMatcher(SkillType.ATTACK, null, null) 
 
             const card3 = new Card(Rarity.SR, 50, true)
             card3.attribute = Attribute.AQUA
-            card3.skill = new Skill(SkillType.BOOST, 16, true)
-            card3.skill.condition = new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null) 
+            card3.baseSkill = new Skill(SkillType.BOOST, 16, true)
+            card3.baseSkill.condition = new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null) 
 
             const deck = new Deck(card1, card2, card3)
             
@@ -103,24 +118,62 @@ describe('Card', () => {
             // Boosted by card3
             expect(boostPercentsBoss[2]).to.equal(16)
         })
+        it('should use choukaika skill when card is in choukaika state', () => {
+            const card1 = new Card(Rarity.SSR, 70, true)
+            card1.attribute = Attribute.AQUA
+            card1.baseSkill = new Skill(SkillType.ATTACK, 17, true)
+            card1.choukaikaSkill = new Skill(SkillType.ATTACK, 20, true)
+
+            const card2 = new Card(Rarity.SSR, 70, true)
+            card2.attribute = Attribute.AQUA
+            card2.baseSkill = new Skill(SkillType.BOOST, 15)
+            card2.choukaikaSkill = new Skill(SkillType.BOOST, 17)
+            card2.baseSkill.condition = new CardMatcher(SkillType.ATTACK, null, null) 
+            card2.choukaikaSkill.condition = new CardMatcher(SkillType.ATTACK, null, null) 
+
+            const card3 = new Card(Rarity.SR, 70, true)
+            card3.attribute = Attribute.AQUA
+            card3.baseSkill = new Skill(SkillType.BOOST, 16, true)
+            card3.choukaikaSkill = new Skill(SkillType.BOOST, 18, true)
+            card3.baseSkill.condition = new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null) 
+            card3.choukaikaSkill.condition = new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null) 
+
+            const deck = new Deck(card1, card2, card3)
+            
+            // Not in choukaika state
+            const boostPercents = card1.calculateBoostPercents(true)
+            // Boosted by card2 by 15%
+            expect(boostPercents[1]).to.equal(15)
+            // Boosted by card3 by 16%
+            expect(boostPercents[2]).to.equal(16)
+
+            // Second and third card in choukaika state
+            card2.choukaika = true
+            card3.choukaika = true
+            const boostPercentsChoukaika = card1.calculateBoostPercents(true)
+            // Boosted by card2 by 17%
+            expect(boostPercentsChoukaika[1]).to.equal(17)
+            // Boosted by card3 by 18%
+            expect(boostPercentsChoukaika[2]).to.equal(18)
+        })
     })
     describe('calculateAttackWithSkills()', () => {
         it('should return known attack for a givent deck', () => {
             const card1 = new Card(Rarity.SSR, 28, true)
             card1.attribute = Attribute.AQUA
-            card1.skill = new Skill(SkillType.ATTACK, 17, true)
+            card1.baseSkill = new Skill(SkillType.ATTACK, 17, true)
             card1.characterName = '日向 美海'
 
             const card2 = new Card(Rarity.SSR, 4, true)
             card2.attribute = Attribute.AQUA
-            card2.skill = new Skill(SkillType.BOOST, 15)
-            card2.skill.condition = new CardMatcher(SkillType.ATTACK, null, '日向 美海')
+            card2.baseSkill = new Skill(SkillType.BOOST, 15)
+            card2.baseSkill.condition = new CardMatcher(SkillType.ATTACK, null, '日向 美海')
             card2.characterName = '日向 美海'
 
             const card3 = new Card(Rarity.SR, 37, true)
             card3.attribute = Attribute.AQUA
-            card3.skill = new Skill(SkillType.BOOST, 15, true)
-            card3.skill.condition = new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null) 
+            card3.baseSkill = new Skill(SkillType.BOOST, 15, true)
+            card3.baseSkill.condition = new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null) 
             card3.characterName = '東条 遥'
 
             const deck = new Deck(card1, card2, card3)
@@ -165,18 +218,18 @@ describe('Card', () => {
         it('should return known attack for a given deck', () => {
             const card1 = new Card(Rarity.SSR, 43)
             card1.attribute = Attribute.FIRE
-            card1.skill = new Skill(SkillType.ATTACK, 7, true)
-            card1.skill.condition = new CardMatcher(null, null, '結城 莉玖')
+            card1.baseSkill = new Skill(SkillType.ATTACK, 7, true)
+            card1.baseSkill.condition = new CardMatcher(null, null, '結城 莉玖')
             card1.characterName = '結城 莉玖'
 
             const card2 = new Card(Rarity.SSR, 43)
             card2.attribute = Attribute.AQUA
-            card2.skill = new Skill(SkillType.ATTACK, 20, true)
+            card2.baseSkill = new Skill(SkillType.ATTACK, 20, true)
             card2.characterName = '三角 葵'
 
             const card3 = new Card(Rarity.SR, 40)
             card3.attribute = Attribute.LEAF
-            card3.skill = new Skill(SkillType.ATTACK, 15, true)
+            card3.baseSkill = new Skill(SkillType.ATTACK, 15, true)
             card3.characterName = '藍原 椿'
 
             const deck = new Deck(card1, card2, card3)
