@@ -30,18 +30,28 @@ describe('CardMatcher', () => {
             expect(matcher.match(cardFire)).to.be.true
         })
         it('should return whether character name match', () => {
-            const matcher = new CardMatcher(null, null, '結城 莉玖')
+            // this matcher will match only Riku
+            const matcher = new CardMatcher(null, null, ['結城 莉玖'])
+            // this matcher will match Riku or Tsubaki
+            const matcher2 = new CardMatcher(null, null, ['結城 莉玖', '藍原 椿'])
 
             const cardTsubaki = new Card()
             cardTsubaki.characterName = '藍原 椿'
             expect(matcher.match(cardTsubaki)).to.be.false
+            expect(matcher2.match(cardTsubaki)).to.be.true
 
             const cardRiku = new Card()
             cardRiku.characterName = '結城 莉玖'
             expect(matcher.match(cardRiku)).to.be.true
+            expect(matcher2.match(cardRiku)).to.be.true
+
+            const cardHaruna = new Card()
+            cardHaruna.characterName = '桜井 春菜'
+            expect(matcher.match(cardHaruna)).to.be.false
+            expect(matcher2.match(cardHaruna)).to.be.false
         })
         it('should return true only when everything match', () => {
-            const matcher = new CardMatcher(SkillType.ATTACK, Attribute.FIRE, '結城 莉玖')
+            const matcher = new CardMatcher(SkillType.ATTACK, Attribute.FIRE, ['結城 莉玖'])
 
             const card = new Card()
             card.baseSkill = new Skill(SkillType.BOOST)

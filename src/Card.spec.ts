@@ -167,7 +167,7 @@ describe('Card', () => {
             const card2 = new Card(Rarity.SSR, 4, true)
             card2.attribute = Attribute.AQUA
             card2.baseSkill = new Skill(SkillType.BOOST, 15)
-            card2.baseSkill.condition = new CardMatcher(SkillType.ATTACK, null, '日向 美海')
+            card2.baseSkill.condition = new CardMatcher(SkillType.ATTACK, null, ['日向 美海'])
             card2.characterName = '日向 美海'
 
             const card3 = new Card(Rarity.SR, 37, true)
@@ -219,7 +219,7 @@ describe('Card', () => {
             const card1 = new Card(Rarity.SSR, 43)
             card1.attribute = Attribute.FIRE
             card1.baseSkill = new Skill(SkillType.ATTACK, 7, true)
-            card1.baseSkill.condition = new CardMatcher(null, null, '結城 莉玖')
+            card1.baseSkill.condition = new CardMatcher(null, null, ['結城 莉玖'])
             card1.characterName = '結城 莉玖'
 
             const card2 = new Card(Rarity.SSR, 43)

@@ -5,14 +5,17 @@ import { SkillType } from './Skill'
  * It is used by boost skills to indicate boost conditions.
  */
 export class CardMatcher {
+    // Card should have same skill type
     skillType: SkillType
+    // Card should have same attribute
     attribute: Attribute
-    characterName: string
+    // Card should math one of the names
+    characterNames: string[]
 
-    constructor(skillType: SkillType, attribute: Attribute, characterName: string) {
+    constructor(skillType: SkillType, attribute: Attribute, characterNames: string[]) {
         this.skillType = skillType
         this.attribute = attribute
-        this.characterName = characterName
+        this.characterNames = characterNames
     }
 
     /**
@@ -29,7 +32,7 @@ export class CardMatcher {
             return false
         }
 
-        if (this.characterName && card.characterName !== this.characterName) {
+        if (this.characterNames && !this.characterNames.includes(card.characterName)) {
             return false
         }
 

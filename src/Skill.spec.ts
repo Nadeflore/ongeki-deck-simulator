@@ -22,7 +22,7 @@ describe('Skill', () => {
         })
         it('should return percentage multiplied by the number of card matching the conditon', () => {
             const skill = new Skill(SkillType.ATTACK, 7, true)
-            skill.condition = new CardMatcher(null, null, '結城 莉玖')
+            skill.condition = new CardMatcher(null, null, ['結城 莉玖'])
 
             // No deck specified, condition is ignored, return percentage
             expect(skill.calculateSelfIncreasePercent(true, null)).to.equal(7)
