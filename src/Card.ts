@@ -17,7 +17,7 @@ export enum Attribute {
 export class Card {
     // Card rarity: N R SR or SSR
     rarity: Rarity
-    // True if this is an event card
+    // True if this is an event or promotion card
     event: boolean
     // FIRE, AQUA or LEAF
     attribute: Attribute
