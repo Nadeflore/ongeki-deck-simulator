@@ -1,4 +1,4 @@
-import { Skill } from './Skill'
+import { Skill, SkillJson } from './Skill'
 
 export enum Rarity {
     N = 1,
@@ -162,6 +162,26 @@ export class Card {
     calculateAttackAgainstEnemy(boss: boolean, attribute: Attribute) {
         return Math.round(this.calculateAttackWithSkills(boss) * (1 + this.compareAttribute(attribute) / 10))
     }
+
+    /**
+     * Create instance from json data
+     * @param data Card data from json
+     * @return A new instance of Card
+     */
+    static fromJson(data: CardJson) {
+        const card = new this()
+        card.rarity = Rarity[data.rarity]
+        card.attribute = Attribute[data.attribute]
+        card.characterName = data.characterName
+        // Detect event from card number
+        card.event = /^1\.\d\d-[EP]-\d{4}$/.test(data.cardNumber)
+
+        // Skill
+        card.baseSkill = Skill.fromJson(data.baseSkill)
+        card.choukaikaSkill = Skill.fromJson(data.choukaikaSkill)
+
+        return card
+    }
 }
 
 export class Deck {
@@ -173,4 +193,13 @@ export class Deck {
         card3.deck = this
         this.cards = [card1, card2, card3]
     }
+}
+
+export interface CardJson {
+    rarity: string
+    attribute: string
+    characterName: string
+    cardNumber: string
+    baseSkill: SkillJson
+    choukaikaSkill: SkillJson
 }

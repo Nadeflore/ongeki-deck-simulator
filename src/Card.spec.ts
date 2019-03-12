@@ -246,4 +246,60 @@ describe('Card', () => {
             expect(card3.calculateAttackAgainstEnemy(true, enemyAttribute)).to.equal(198)
         })
     })
+    describe('fromJson()', () => {
+        it('should return new instance based on card data', () => {
+            const card = Card.fromJson(
+                {
+                    rarity: "N",
+                    attribute: "FIRE",
+                    characterName: "星咲 あかり",
+                    cardNumber: "1.00-0001",
+                    baseSkill: {
+                        type: "ATTACK",
+                        name: "ボスアタック +5",
+                        details: "バトル後半で、自身の攻撃力5％アップ"
+                    },
+                    choukaikaSkill: {
+                        type: "ATTACK",
+                        name: "ボスアタック +25",
+                        details: "バトル後半で、自身の攻撃力25％アップ"
+                    }
+                }
+            )
+
+            expect(card.rarity).to.equal(Rarity.N)
+            expect(card.event).to.be.false
+            expect(card.attribute).to.equal(Attribute.FIRE)
+            expect(card.characterName).to.equal('星咲 あかり')
+            expect(card.baseSkill).to.deep.equal(new Skill(SkillType.ATTACK, 5, true))
+            expect(card.choukaikaSkill).to.deep.equal(new Skill(SkillType.ATTACK, 25, true))
+        })
+        it('should return new instance based on card data for event card', () => {
+            const card = Card.fromJson(
+                {
+                    rarity: "SR",
+                    attribute: "AQUA",
+                    characterName: "東条 遥",
+                    cardNumber: "1.00-E-0062",
+                    baseSkill: {
+                        type: "BOOST",
+                        name: "ボスアクアブースト +15",
+                        details: "バトル後半で、\n属性【AQUA】かつ【ATTACK】の攻撃力15％アップ"
+                    },
+                    choukaikaSkill: {
+                        type: "BOOST",
+                        name: "ボスアクアブースト +17",
+                        details: "バトル後半で、\n属性【AQUA】かつ【ATTACK】の攻撃力17％アップ"
+                    }
+                }
+            )
+
+            expect(card.rarity).to.equal(Rarity.SR)
+            expect(card.event).to.be.true
+            expect(card.attribute).to.equal(Attribute.AQUA)
+            expect(card.characterName).to.equal('東条 遥')
+            expect(card.baseSkill).to.deep.equal(new Skill(SkillType.BOOST, 15, true, new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null)))
+            expect(card.choukaikaSkill).to.deep.equal(new Skill(SkillType.BOOST, 17, true, new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null)))
+        })
+    })
 })

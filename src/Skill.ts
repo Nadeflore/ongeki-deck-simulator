@@ -93,7 +93,7 @@ export class Skill {
      */
     static fromJson(data: SkillJson) {
         // Convert string to enum
-        let type = SkillType[data.type as keyof typeof SkillType]
+        let type = SkillType[data.type]
         let percentage: number
         let boss: boolean
         let condition: CardMatcher
@@ -137,7 +137,7 @@ export class Skill {
                 // Attribute condition
                 let attribute = null
                 if (res[2]) {
-                    attribute = Attribute[res[2] as keyof typeof Attribute]
+                    attribute = Attribute[res[2]]
                 }
                 // Character condition
                 let characters = null
@@ -168,8 +168,8 @@ export class Skill {
 }
 
 
-interface SkillJson {
-    type: string;
-    name: string;
-    details: string;
+export interface SkillJson {
+    type: string
+    name: string
+    details: string
 }
