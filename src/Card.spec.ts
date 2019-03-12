@@ -5,6 +5,8 @@ import { CardMatcher } from './CardMatcher'
 import { expect } from 'chai'
 import 'mocha';
 
+import cards from '../cards.json'
+
 describe('Card', () => {
     describe('calculateBaseAttack()', () => {
         it('should return known attack for N card', () => {
@@ -300,6 +302,71 @@ describe('Card', () => {
             expect(card.characterName).to.equal('東条 遥')
             expect(card.baseSkill).to.deep.equal(new Skill(SkillType.BOOST, 15, true, new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null)))
             expect(card.choukaikaSkill).to.deep.equal(new Skill(SkillType.BOOST, 17, true, new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null)))
+        })
+        it('should throw error when rarity is invalid', () => {
+            expect(Card.fromJson.bind(Card,
+                {
+                    rarity: "INV",
+                    attribute: "FIRE",
+                    characterName: "星咲 あかり",
+                    cardNumber: "1.00-0001",
+                    baseSkill: {
+                        type: "ATTACK",
+                        name: "ボスアタック +5",
+                        details: "バトル後半で、自身の攻撃力5％アップ"
+                    },
+                    choukaikaSkill: {
+                        type: "ATTACK",
+                        name: "ボスアタック +25",
+                        details: "バトル後半で、自身の攻撃力25％アップ"
+                    }
+                }
+            )).to.throw("Invalid rarity")
+        })
+        it('should throw error when attribute is invalid', () => {
+            expect(Card.fromJson.bind(Card,
+                {
+                    rarity: "N",
+                    attribute: "INVAL",
+                    characterName: "星咲 あかり",
+                    cardNumber: "1.00-0001",
+                    baseSkill: {
+                        type: "ATTACK",
+                        name: "ボスアタック +5",
+                        details: "バトル後半で、自身の攻撃力5％アップ"
+                    },
+                    choukaikaSkill: {
+                        type: "ATTACK",
+                        name: "ボスアタック +25",
+                        details: "バトル後半で、自身の攻撃力25％アップ"
+                    }
+                }
+            )).to.throw("Invalid attribute")
+        })
+        it('should throw error when card number is invalid', () => {
+            expect(Card.fromJson.bind(Card,
+                {
+                    rarity: "N",
+                    attribute: "FIRE",
+                    characterName: "星咲 あかり",
+                    cardNumber: "invalid card number",
+                    baseSkill: {
+                        type: "ATTACK",
+                        name: "ボスアタック +5",
+                        details: "バトル後半で、自身の攻撃力5％アップ"
+                    },
+                    choukaikaSkill: {
+                        type: "ATTACK",
+                        name: "ボスアタック +25",
+                        details: "バトル後半で、自身の攻撃力25％アップ"
+                    }
+                }
+            )).to.throw("Invalid card number")
+        })
+        it('should create cards instances from json file', () => {
+            for(let card of cards) {
+                Card.fromJson(card)
+            }
         })
     })
 })

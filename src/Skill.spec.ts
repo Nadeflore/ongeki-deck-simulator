@@ -271,5 +271,19 @@ describe('Skill', () => {
             expect(skill.boss).to.be.false
             expect(skill.condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, null, null))
         })
+        it('should throw an error when skill details is not valid', () => {
+            expect(Skill.fromJson.bind(Skill, {
+                type: "BOOST",
+                name: "invalid name",
+                details: "invalid details"
+            })).to.throw("Could not parse card skill")
+        })
+        it('should throw an error when skill type is not valid', () => {
+            expect(Skill.fromJson.bind(Skill, {
+                type: "INVALIDTYPE",
+                name: "まんたんブースト +12",
+                details: "ライフ100％時、【ATTACK】の攻撃12％アップ"
+            })).to.throw("Invalid type")
+        })
     })
 })

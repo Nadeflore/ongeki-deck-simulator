@@ -171,10 +171,20 @@ export class Card {
     static fromJson(data: CardJson) {
         const card = new this()
         card.rarity = Rarity[data.rarity]
+        if (!card.rarity) {
+            throw new Error("Invalid rarity")
+        }
         card.attribute = Attribute[data.attribute]
+        if (!card.attribute) {
+            throw new Error("Invalid attribute")
+        }
         card.characterName = data.characterName
         // Detect event from card number
-        card.event = /^1\.\d\d-[EP]-\d{4}$/.test(data.cardNumber)
+        const cardNumberRes = /^1\.\d\d-(?:([EP])-)?\d{4}$/.exec(data.cardNumber)
+        if (!cardNumberRes) {
+            throw new Error("Invalid card number")
+        }
+        card.event = !!cardNumberRes[1]
 
         // Skill
         card.baseSkill = Skill.fromJson(data.baseSkill)

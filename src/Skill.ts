@@ -94,6 +94,10 @@ export class Skill {
     static fromJson(data: SkillJson) {
         // Convert string to enum
         let type = SkillType[data.type]
+        if (!type) {
+            throw new Error("Invalid type")
+        }
+
         let percentage: number
         let boss: boolean
         let condition: CardMatcher
@@ -126,7 +130,7 @@ export class Skill {
                 break
             }
             case SkillType.BOOST: {
-                const regex = /^(?:ダメージカウント0の時、|ライフ100％時、|(バトル後半で、))?\n?(?:属性【(.*?)】|【(.*?)】(?:と【(.*?)】)?)??(?:かつ)?(【ATTACK】)?の攻撃力?(\d+)％アップ(?:\n被弾時のダメージが\d+倍になる)?$/
+                const regex = /^(?:ダメージカウント0の時、|ライフ100％時、|(バトル後半で、))?\n?(?:属性【(FIRE|LEAF|AQUA)】|【(.*?)】(?:と【(.*?)】)?)??(?:かつ)?(【ATTACK】)?の攻撃力?(\d+)％アップ(?:\n被弾時のダメージが\d+倍になる)?$/
                 const res = regex.exec(data.details)
                 if (!res) {
                     throw new Error("Could not parse card skill")

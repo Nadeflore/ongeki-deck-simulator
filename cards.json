@@ -1,0 +1,34 @@
+[
+    {
+        "rarity": "N",
+        "attribute": "FIRE",
+        "characterName": "星咲 あかり",
+        "cardNumber": "1.00-0001",
+        "baseSkill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +5",
+            "details": "バトル後半で、自身の攻撃力5％アップ"
+        },
+        "choukaikaSkill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +25",
+            "details": "バトル後半で、自身の攻撃力25％アップ"
+        }
+    },
+    {
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "characterName": "東条 遥",
+        "cardNumber": "1.00-E-0062",
+        "baseSkill": {
+            "type": "BOOST",
+            "name": "ボスアクアブースト +15",
+            "details": "バトル後半で、\n属性【AQUA】かつ【ATTACK】の攻撃力15％アップ"
+        },
+        "choukaikaSkill": {
+            "type": "BOOST",
+            "name": "ボスアクアブースト +17",
+            "details": "バトル後半で、\n属性【AQUA】かつ【ATTACK】の攻撃力17％アップ"
+        }
+    }
+]
