@@ -95,7 +95,7 @@ export class Skill {
         // Convert string to enum
         let type = SkillType[data.type]
         if (!type) {
-            throw new Error("Invalid type")
+            throw new Error("Invalid type: " + data.type)
         }
 
         let percentage: number
@@ -107,7 +107,7 @@ export class Skill {
             case SkillType.ASSIST: {
                 const res = /自身の攻撃力(\d+)％アップ/.exec(data.details)
                 if (!res) {
-                    throw new Error("Could not parse card skill")
+                    throw new Error("Could not parse card skill: " + data.details)
                 }
                 percentage = +res[1]
                 break
@@ -116,7 +116,7 @@ export class Skill {
                 const regex = /^(?:ダメージカウント0の時、|ライフ100％時、|(バトル後半で、))?(?:【(.*?)】のカード1枚につき、)?\n?自身の攻撃力?(\d+)％アップ(?:\n被弾時のダメージが\d+倍になる)?$/
                 const res = regex.exec(data.details)
                 if (!res) {
-                    throw new Error("Could not parse card skill")
+                    throw new Error("Could not parse card skill: " + data.details)
                 }
                 // Boss 
                 boss = !!res[1]
@@ -133,7 +133,7 @@ export class Skill {
                 const regex = /^(?:ダメージカウント0の時、|ライフ100％時、|(バトル後半で、))?\n?(?:属性【(FIRE|LEAF|AQUA)】|【(.*?)】(?:と【(.*?)】)?)??(?:かつ)?(【ATTACK】)?の攻撃力?(\d+)％アップ(?:\n被弾時のダメージが\d+倍になる)?$/
                 const res = regex.exec(data.details)
                 if (!res) {
-                    throw new Error("Could not parse card skill")
+                    throw new Error("Could not parse card skill: " + data.details)
                 }
                 // Boss 
                 boss = !!res[1]

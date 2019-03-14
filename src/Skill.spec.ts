@@ -276,14 +276,14 @@ describe('Skill', () => {
                 type: "BOOST",
                 name: "invalid name",
                 details: "invalid details"
-            })).to.throw("Could not parse card skill")
+            })).to.throw("Could not parse card skill: invalid details")
         })
         it('should throw an error when skill type is not valid', () => {
             expect(Skill.fromJson.bind(Skill, {
                 type: "INVALIDTYPE",
                 name: "まんたんブースト +12",
                 details: "ライフ100％時、【ATTACK】の攻撃12％アップ"
-            })).to.throw("Invalid type")
+            })).to.throw("Invalid type: INVALIDTYPE")
         })
     })
 })

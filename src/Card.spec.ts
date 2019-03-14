@@ -321,7 +321,7 @@ describe('Card', () => {
                         details: "バトル後半で、自身の攻撃力25％アップ"
                     }
                 }
-            )).to.throw("Invalid rarity")
+            )).to.throw("Invalid rarity: INV")
         })
         it('should throw error when attribute is invalid', () => {
             expect(Card.fromJson.bind(Card,
@@ -341,7 +341,7 @@ describe('Card', () => {
                         details: "バトル後半で、自身の攻撃力25％アップ"
                     }
                 }
-            )).to.throw("Invalid attribute")
+            )).to.throw("Invalid attribute: INVAL")
         })
         it('should throw error when card number is invalid', () => {
             expect(Card.fromJson.bind(Card,
@@ -349,7 +349,7 @@ describe('Card', () => {
                     rarity: "N",
                     attribute: "FIRE",
                     characterName: "星咲 あかり",
-                    cardNumber: "invalid card number",
+                    cardNumber: "1000.inv",
                     baseSkill: {
                         type: "ATTACK",
                         name: "ボスアタック +5",
@@ -361,7 +361,7 @@ describe('Card', () => {
                         details: "バトル後半で、自身の攻撃力25％アップ"
                     }
                 }
-            )).to.throw("Invalid card number")
+            )).to.throw("Invalid card number: 1000.inv")
         })
         it('should create cards instances from json file', () => {
             for(let card of cards) {

@@ -172,17 +172,17 @@ export class Card {
         const card = new this()
         card.rarity = Rarity[data.rarity]
         if (!card.rarity) {
-            throw new Error("Invalid rarity")
+            throw new Error("Invalid rarity: " + data.rarity)
         }
         card.attribute = Attribute[data.attribute]
         if (!card.attribute) {
-            throw new Error("Invalid attribute")
+            throw new Error("Invalid attribute: " + data.attribute)
         }
         card.characterName = data.characterName
         // Detect event from card number
         const cardNumberRes = /^1\.\d\d-(?:([EP])-)?\d{4}$/.exec(data.cardNumber)
         if (!cardNumberRes) {
-            throw new Error("Invalid card number")
+            throw new Error("Invalid card number: " + data.cardNumber)
         }
         card.event = !!cardNumberRes[1]
 
