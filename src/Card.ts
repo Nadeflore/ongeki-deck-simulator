@@ -1,4 +1,4 @@
-import { Skill, SkillJson } from './Skill'
+import { Skill, SkillType, SkillJson } from './Skill'
 
 export enum Rarity {
     N = 1,
@@ -21,17 +21,13 @@ export class Card {
     event: boolean
     // FIRE, AQUA or LEAF
     attribute: Attribute
-    // Card base skill
-    baseSkill: Skill
-    // Card upgraded skill
-    choukaikaSkill: Skill
+    // Card skill
+    skill: Skill
     // Character full name
     characterName: string
 
     // Card level, minimum 1, maximum 100 for N card, 70 for others
     level: number
-    // Choukaika, true when skill has been upgraded
-    choukaika: boolean
     // Contains reference to all cards in deck (including this one)
     deck: Deck
 
@@ -81,19 +77,6 @@ export class Card {
             attack -= 5
         }
         return attack
-    }
-
-    /**
-     * Skill accessor
-     * @return Base skill when choukaika is false,
-     *         choukaika skill when choukaika is true.
-     */
-    get skill() {
-        if (this.choukaika) {
-            return this.choukaikaSkill
-        } else {
-            return this.baseSkill
-        }
     }
 
     /**
@@ -187,8 +170,12 @@ export class Card {
         card.event = !!cardNumberRes[1]
 
         // Skill
-        card.baseSkill = Skill.fromJson(data.baseSkill)
-        card.choukaikaSkill = Skill.fromJson(data.choukaikaSkill)
+        card.skill = Skill.fromJson(data.skill)
+
+        // Special case for N cards
+        if (card.rarity === Rarity.N) {
+            card.skill.percentageChoukaika = 25
+        }
 
         return card
     }
@@ -206,10 +193,9 @@ export class Deck {
 }
 
 export interface CardJson {
+    characterName: string
     rarity: string
     attribute: string
-    characterName: string
     cardNumber: string
-    baseSkill: SkillJson
-    choukaikaSkill: SkillJson
+    skill: SkillJson
 }

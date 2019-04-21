@@ -66,35 +66,34 @@ describe('Card', () => {
         })
     })
     describe('calculateSelfIncreasePercent()', () => {
-        it('should return SelfIncrease percent based on active skill', () => {
+        it('should return SelfIncrease percent according to choukaika status', () => {
             const card = new Card(Rarity.SSR, 70, true)
             card.attribute = Attribute.AQUA
-            card.baseSkill = new Skill(SkillType.ATTACK, 17, false)
-            card.choukaikaSkill = new Skill(SkillType.ATTACK, 20, false)
+            card.skill = new Skill(SkillType.ATTACK, 17, false)
 
             // Not choukaika state
             expect(card.calculateSelfIncreasePercent(false)).to.equal(17)
 
             // Choukaika state
-            card.choukaika = true
-            expect(card.calculateSelfIncreasePercent(false)).to.equal(20)
+            card.skill.choukaika = true
+            expect(card.calculateSelfIncreasePercent(false)).to.equal(19)
         })
     })
     describe('calculateBoostPercents()', () => {
         it('should return boost percent for each card in deck', () => {
             const card1 = new Card(Rarity.SSR, 50, true)
             card1.attribute = Attribute.AQUA
-            card1.baseSkill = new Skill(SkillType.ATTACK, 17, true)
+            card1.skill = new Skill(SkillType.ATTACK, 17, true)
 
             const card2 = new Card(Rarity.SSR, 50, true)
             card2.attribute = Attribute.AQUA
-            card2.baseSkill = new Skill(SkillType.BOOST, 15)
-            card2.baseSkill.condition = new CardMatcher(SkillType.ATTACK, null, null) 
+            card2.skill = new Skill(SkillType.BOOST, 15)
+            card2.skill.condition = new CardMatcher(SkillType.ATTACK, null, null) 
 
             const card3 = new Card(Rarity.SR, 50, true)
             card3.attribute = Attribute.AQUA
-            card3.baseSkill = new Skill(SkillType.BOOST, 16, true)
-            card3.baseSkill.condition = new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null) 
+            card3.skill = new Skill(SkillType.BOOST, 16, true)
+            card3.skill.condition = new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null) 
 
             const deck = new Deck(card1, card2, card3)
             
@@ -120,25 +119,20 @@ describe('Card', () => {
             // Boosted by card3
             expect(boostPercentsBoss[2]).to.equal(16)
         })
-        it('should use choukaika skill when card is in choukaika state', () => {
+        it('should return higher skill values when card is in choukaika state', () => {
             const card1 = new Card(Rarity.SSR, 70, true)
             card1.attribute = Attribute.AQUA
-            card1.baseSkill = new Skill(SkillType.ATTACK, 17, true)
-            card1.choukaikaSkill = new Skill(SkillType.ATTACK, 20, true)
+            card1.skill = new Skill(SkillType.ATTACK, 17, true)
 
             const card2 = new Card(Rarity.SSR, 70, true)
             card2.attribute = Attribute.AQUA
-            card2.baseSkill = new Skill(SkillType.BOOST, 15)
-            card2.choukaikaSkill = new Skill(SkillType.BOOST, 17)
-            card2.baseSkill.condition = new CardMatcher(SkillType.ATTACK, null, null) 
-            card2.choukaikaSkill.condition = new CardMatcher(SkillType.ATTACK, null, null) 
+            card2.skill = new Skill(SkillType.BOOST, 15)
+            card2.skill.condition = new CardMatcher(SkillType.ATTACK, null, null) 
 
             const card3 = new Card(Rarity.SR, 70, true)
             card3.attribute = Attribute.AQUA
-            card3.baseSkill = new Skill(SkillType.BOOST, 16, true)
-            card3.choukaikaSkill = new Skill(SkillType.BOOST, 18, true)
-            card3.baseSkill.condition = new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null) 
-            card3.choukaikaSkill.condition = new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null) 
+            card3.skill = new Skill(SkillType.BOOST, 16, true)
+            card3.skill.condition = new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null) 
 
             const deck = new Deck(card1, card2, card3)
             
@@ -150,8 +144,8 @@ describe('Card', () => {
             expect(boostPercents[2]).to.equal(16)
 
             // Second and third card in choukaika state
-            card2.choukaika = true
-            card3.choukaika = true
+            card2.skill.choukaika = true
+            card3.skill.choukaika = true
             const boostPercentsChoukaika = card1.calculateBoostPercents(true)
             // Boosted by card2 by 17%
             expect(boostPercentsChoukaika[1]).to.equal(17)
@@ -163,19 +157,19 @@ describe('Card', () => {
         it('should return known attack for a givent deck', () => {
             const card1 = new Card(Rarity.SSR, 28, true)
             card1.attribute = Attribute.AQUA
-            card1.baseSkill = new Skill(SkillType.ATTACK, 17, true)
+            card1.skill = new Skill(SkillType.ATTACK, 17, true)
             card1.characterName = '日向 美海'
 
             const card2 = new Card(Rarity.SSR, 4, true)
             card2.attribute = Attribute.AQUA
-            card2.baseSkill = new Skill(SkillType.BOOST, 15)
-            card2.baseSkill.condition = new CardMatcher(SkillType.ATTACK, null, ['日向 美海'])
+            card2.skill = new Skill(SkillType.BOOST, 15)
+            card2.skill.condition = new CardMatcher(SkillType.ATTACK, null, ['日向 美海'])
             card2.characterName = '日向 美海'
 
             const card3 = new Card(Rarity.SR, 37, true)
             card3.attribute = Attribute.AQUA
-            card3.baseSkill = new Skill(SkillType.BOOST, 15, true)
-            card3.baseSkill.condition = new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null) 
+            card3.skill = new Skill(SkillType.BOOST, 15, true)
+            card3.skill.condition = new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null) 
             card3.characterName = '東条 遥'
 
             const deck = new Deck(card1, card2, card3)
@@ -220,18 +214,18 @@ describe('Card', () => {
         it('should return known attack for a given deck', () => {
             const card1 = new Card(Rarity.SSR, 43)
             card1.attribute = Attribute.FIRE
-            card1.baseSkill = new Skill(SkillType.ATTACK, 7, true)
-            card1.baseSkill.condition = new CardMatcher(null, null, ['結城 莉玖'])
+            card1.skill = new Skill(SkillType.ATTACK, 7, true)
+            card1.skill.condition = new CardMatcher(null, null, ['結城 莉玖'])
             card1.characterName = '結城 莉玖'
 
             const card2 = new Card(Rarity.SSR, 43)
             card2.attribute = Attribute.AQUA
-            card2.baseSkill = new Skill(SkillType.ATTACK, 20, true)
+            card2.skill = new Skill(SkillType.ATTACK, 20, true)
             card2.characterName = '三角 葵'
 
             const card3 = new Card(Rarity.SR, 40)
             card3.attribute = Attribute.LEAF
-            card3.baseSkill = new Skill(SkillType.ATTACK, 15, true)
+            card3.skill = new Skill(SkillType.ATTACK, 15, true)
             card3.characterName = '藍原 椿'
 
             const deck = new Deck(card1, card2, card3)
@@ -252,19 +246,35 @@ describe('Card', () => {
         it('should return new instance based on card data', () => {
             const card = Card.fromJson(
                 {
+                    rarity: "R",
+                    attribute: "FIRE",
+                    characterName: "星咲 あかり",
+                    cardNumber: "1.00-0001",
+                    skill: {
+                        type: "ATTACK",
+                        name: "ボスアタック +5",
+                        details: "バトル後半で、自身の攻撃力5％アップ"
+                    }
+                }
+            )
+
+            expect(card.rarity).to.equal(Rarity.R)
+            expect(card.event).to.be.false
+            expect(card.attribute).to.equal(Attribute.FIRE)
+            expect(card.characterName).to.equal('星咲 あかり')
+            expect(card.skill).to.deep.equal(new Skill(SkillType.ATTACK, 5, true))
+        })
+        it('should create special skill with 25 percentageChoukaika for N cards', () => {
+            const card = Card.fromJson(
+                {
                     rarity: "N",
                     attribute: "FIRE",
                     characterName: "星咲 あかり",
                     cardNumber: "1.00-0001",
-                    baseSkill: {
+                    skill: {
                         type: "ATTACK",
                         name: "ボスアタック +5",
                         details: "バトル後半で、自身の攻撃力5％アップ"
-                    },
-                    choukaikaSkill: {
-                        type: "ATTACK",
-                        name: "ボスアタック +25",
-                        details: "バトル後半で、自身の攻撃力25％アップ"
                     }
                 }
             )
@@ -273,8 +283,9 @@ describe('Card', () => {
             expect(card.event).to.be.false
             expect(card.attribute).to.equal(Attribute.FIRE)
             expect(card.characterName).to.equal('星咲 あかり')
-            expect(card.baseSkill).to.deep.equal(new Skill(SkillType.ATTACK, 5, true))
-            expect(card.choukaikaSkill).to.deep.equal(new Skill(SkillType.ATTACK, 25, true))
+            const expectedSkill = new Skill(SkillType.ATTACK, 5, true)
+            expectedSkill.percentageChoukaika = 25
+            expect(card.skill).to.deep.equal(expectedSkill)
         })
         it('should return new instance based on card data for event card', () => {
             const card = Card.fromJson(
@@ -283,15 +294,10 @@ describe('Card', () => {
                     attribute: "AQUA",
                     characterName: "東条 遥",
                     cardNumber: "1.00-E-0062",
-                    baseSkill: {
+                    skill: {
                         type: "BOOST",
                         name: "ボスアクアブースト +15",
                         details: "バトル後半で、\n属性【AQUA】かつ【ATTACK】の攻撃力15％アップ"
-                    },
-                    choukaikaSkill: {
-                        type: "BOOST",
-                        name: "ボスアクアブースト +17",
-                        details: "バトル後半で、\n属性【AQUA】かつ【ATTACK】の攻撃力17％アップ"
                     }
                 }
             )
@@ -300,8 +306,7 @@ describe('Card', () => {
             expect(card.event).to.be.true
             expect(card.attribute).to.equal(Attribute.AQUA)
             expect(card.characterName).to.equal('東条 遥')
-            expect(card.baseSkill).to.deep.equal(new Skill(SkillType.BOOST, 15, true, new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null)))
-            expect(card.choukaikaSkill).to.deep.equal(new Skill(SkillType.BOOST, 17, true, new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null)))
+            expect(card.skill).to.deep.equal(new Skill(SkillType.BOOST, 15, true, new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null)))
         })
         it('should throw error when rarity is invalid', () => {
             expect(Card.fromJson.bind(Card,
@@ -310,15 +315,10 @@ describe('Card', () => {
                     attribute: "FIRE",
                     characterName: "星咲 あかり",
                     cardNumber: "1.00-0001",
-                    baseSkill: {
+                    skill: {
                         type: "ATTACK",
                         name: "ボスアタック +5",
                         details: "バトル後半で、自身の攻撃力5％アップ"
-                    },
-                    choukaikaSkill: {
-                        type: "ATTACK",
-                        name: "ボスアタック +25",
-                        details: "バトル後半で、自身の攻撃力25％アップ"
                     }
                 }
             )).to.throw("Invalid rarity: INV")
@@ -330,15 +330,10 @@ describe('Card', () => {
                     attribute: "INVAL",
                     characterName: "星咲 あかり",
                     cardNumber: "1.00-0001",
-                    baseSkill: {
+                    skill: {
                         type: "ATTACK",
                         name: "ボスアタック +5",
                         details: "バトル後半で、自身の攻撃力5％アップ"
-                    },
-                    choukaikaSkill: {
-                        type: "ATTACK",
-                        name: "ボスアタック +25",
-                        details: "バトル後半で、自身の攻撃力25％アップ"
                     }
                 }
             )).to.throw("Invalid attribute: INVAL")
@@ -350,21 +345,20 @@ describe('Card', () => {
                     attribute: "FIRE",
                     characterName: "星咲 あかり",
                     cardNumber: "1000.inv",
-                    baseSkill: {
+                    skill: {
                         type: "ATTACK",
                         name: "ボスアタック +5",
                         details: "バトル後半で、自身の攻撃力5％アップ"
-                    },
-                    choukaikaSkill: {
-                        type: "ATTACK",
-                        name: "ボスアタック +25",
-                        details: "バトル後半で、自身の攻撃力25％アップ"
                     }
                 }
             )).to.throw("Invalid card number: 1000.inv")
         })
         it('should create cards instances from json file', () => {
             for(let card of cards) {
+                // Ignore new cards for now
+                if (card.cardNumber.startsWith("1.05")){
+                    continue
+                }
                 Card.fromJson(card)
             }
         })

@@ -13,18 +13,51 @@ export enum SkillType {
  */
 export class Skill {
     type: SkillType
-    // Percent of self increase, or boost
-    percentage: number
+    // Percent of self increase, or boost with no choukaika
+    percentageBase: number
+    // Percentage when in choukaika state for special cases
+    // When this value is not set, choukaika percentage is calculated based on general case
+    percentageChoukaika: number
     // If true, skill is only active during boss phase
     boss: boolean
     // Condition for boost, or condition multiplier (optional) for other skill type
     condition: CardMatcher
+    // When true, the percentage used is percentage + additionalPercentage
+    choukaika: boolean
 
-    constructor(type: SkillType, percentage?: number, boss: boolean = false, condition?: CardMatcher) {
+    constructor(type: SkillType, percentageBase?: number, boss: boolean = false, condition?: CardMatcher) {
         this.type = type
-        this.percentage = percentage
+        this.percentageBase = percentageBase
         this.boss = boss
         this.condition = condition
+    }
+
+    /**
+     * Calculate percentage based on choukaika status
+     * @return percentageBase when choukaika is false. When true, returns percentageChoukaika if not null, or when null return general increased percentage
+     */
+    calculatePercentage() {
+        if (!this.choukaika) {
+            return this.percentageBase
+        }
+
+        if (this.percentageChoukaika) {
+            return this.percentageChoukaika
+        }
+
+        // General choukaika percentage
+
+        // Guard skills only improve guard, but not self increase
+        if (this.type === SkillType.GUARD) {
+            return this.percentageBase
+        }
+        // Fusion skill improve self increase per card by 1%
+        if (this.type === SkillType.ATTACK && this.condition) {
+            return this.percentageBase + 1
+        }
+
+        // General case
+        return this.percentageBase + 2
     }
 
     /**
@@ -46,15 +79,17 @@ export class Skill {
 
         let selfIncreasePercent = 0
 
+        const percentage = this.calculatePercentage()
+
         // Special process for skill with condition
         if (this.condition && deck) {
             for (let card of deck.cards) {
                 if (this.condition.match(card)) {
-                    selfIncreasePercent += this.percentage
+                    selfIncreasePercent += percentage
                 }
             }
         } else {
-            selfIncreasePercent = this.percentage
+            selfIncreasePercent = percentage
         }
 
         return selfIncreasePercent
@@ -82,7 +117,7 @@ export class Skill {
             return 0
         }
 
-        return this.percentage
+        return this.calculatePercentage()
     }
 
     /**

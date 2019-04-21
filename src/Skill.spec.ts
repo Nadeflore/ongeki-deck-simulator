@@ -20,6 +20,24 @@ describe('Skill', () => {
             expect(skill.calculateSelfIncreasePercent(false, null)).to.equal(0)
             expect(skill.calculateSelfIncreasePercent(true, null)).to.equal(15)
         })
+        it('should return higher value when skill is in choukaika state', () => {
+            const skill = new Skill(SkillType.ASSIST, 5)
+            // Without choukaika
+            expect(skill.calculateSelfIncreasePercent(false, null)).to.equal(5)
+            // With choukaika
+            skill.choukaika = true
+            expect(skill.calculateSelfIncreasePercent(false, null)).to.equal(7)
+        })
+        it('should return higher value when skill is in choukaika state, with percentage choukaika', () => {
+            const skill = new Skill(SkillType.ATTACK, 5)
+            // Set special choukaika percentage of 25
+            skill.percentageChoukaika = 25
+            // Without choukaika
+            expect(skill.calculateSelfIncreasePercent(false, null)).to.equal(5)
+            // With choukaika
+            skill.choukaika = true
+            expect(skill.calculateSelfIncreasePercent(false, null)).to.equal(25)
+        })
         it('should return percentage multiplied by the number of card matching the conditon', () => {
             const skill = new Skill(SkillType.ATTACK, 7, true)
             skill.condition = new CardMatcher(null, null, ['結城 莉玖'])
@@ -57,22 +75,35 @@ describe('Skill', () => {
             skill.condition = new CardMatcher(SkillType.ATTACK, null, null)
 
             const card = new Card()
-            card.baseSkill = new Skill(SkillType.GUARD)
+            card.skill = new Skill(SkillType.GUARD)
             
             // card does not match condition, should return 0
             expect(skill.calculateBoostPercent(true, card)).to.equal(0)
 
-            card.baseSkill = new Skill(SkillType.ATTACK)
+            card.skill = new Skill(SkillType.ATTACK)
 
             // Card match condition, should return percent
             expect(skill.calculateBoostPercent(true, card)).to.equal(14)
+        })
+        it('should return higher value when in choukaika state', () => {
+            const skill = new Skill(SkillType.BOOST, 14)
+            skill.condition = new CardMatcher(SkillType.ATTACK, null, null)
+
+            const card = new Card()
+            card.skill = new Skill(SkillType.ATTACK)
+
+            // Not Choukaika should return base percentage
+            expect(skill.calculateBoostPercent(true, card)).to.equal(14)
+            // Choukaika should return base percentage + 2
+            skill.choukaika = true
+            expect(skill.calculateBoostPercent(true, card)).to.equal(16)
         })
         it('should return 0 if skill is only active during boss phase, while not in boss phase', () => {
             const skill = new Skill(SkillType.BOOST, 14, true)
             skill.condition = new CardMatcher(SkillType.ATTACK, null, null)
 
             const card = new Card()
-            card.baseSkill = new Skill(SkillType.ATTACK)
+            card.skill = new Skill(SkillType.ATTACK)
 
             expect(skill.calculateBoostPercent(false, card)).to.equal(0)
             expect(skill.calculateBoostPercent(true, card)).to.equal(14)
@@ -87,7 +118,7 @@ describe('Skill', () => {
             })
 
             expect(skill.type).to.equal(SkillType.ATTACK)
-            expect(skill.percentage).to.equal(15)
+            expect(skill.percentageBase).to.equal(15)
             expect(skill.boss).to.be.false
             expect(skill.condition).to.be.undefined
         })
@@ -99,7 +130,7 @@ describe('Skill', () => {
                 details: "バトル後半で、自身の攻撃力5％アップ"
             })
 
-            expect(skillBoss.percentage).to.equal(5)
+            expect(skillBoss.percentageBase).to.equal(5)
             expect(skillBoss.boss).to.be.true
             expect(skillBoss.condition).to.be.undefined
         })
@@ -110,7 +141,7 @@ describe('Skill', () => {
                 details: "バトル後半で、【結城 莉玖】のカード1枚につき、\n自身の攻撃力7％アップ"
             })
 
-            expect(skillWithCondition.percentage).to.equal(7)
+            expect(skillWithCondition.percentageBase).to.equal(7)
             expect(skillWithCondition.boss).to.be.true
             expect(skillWithCondition.condition).to.deep.equal(new CardMatcher(null, null, ["結城 莉玖"]))
         })
@@ -121,7 +152,7 @@ describe('Skill', () => {
                 details: "ダメージカウント0の時、自身の攻撃14％アップ"
             })
 
-            expect(skillNoDamage.percentage).to.equal(14)
+            expect(skillNoDamage.percentageBase).to.equal(14)
             expect(skillNoDamage.boss).to.be.false
             expect(skillNoDamage.condition).to.be.undefined
         })
@@ -132,7 +163,7 @@ describe('Skill', () => {
                 details: "ライフ100％時、自身の攻撃力11％アップ"
             })
 
-            expect(skillMantan.percentage).to.equal(11)
+            expect(skillMantan.percentageBase).to.equal(11)
             expect(skillMantan.boss).to.be.false
             expect(skillMantan.condition).to.be.undefined
         })
@@ -143,7 +174,7 @@ describe('Skill', () => {
                 details: "自身の攻撃力20％アップ\n被弾時のダメージが2倍になる"
             })
 
-            expect(skillDanger.percentage).to.equal(20)
+            expect(skillDanger.percentageBase).to.equal(20)
             expect(skillDanger.boss).to.be.false
             expect(skillDanger.condition).to.be.undefined
         })
@@ -155,7 +186,7 @@ describe('Skill', () => {
             })
 
             expect(skill.type).to.equal(SkillType.GUARD)
-            expect(skill.percentage).to.equal(3)
+            expect(skill.percentageBase).to.equal(3)
             expect(skill.boss).to.be.false
             expect(skill.condition).to.be.undefined
         })
@@ -167,7 +198,7 @@ describe('Skill', () => {
             })
 
             expect(skill.type).to.equal(SkillType.ASSIST)
-            expect(skill.percentage).to.equal(5)
+            expect(skill.percentageBase).to.equal(5)
             expect(skill.boss).to.be.false
             expect(skill.condition).to.be.undefined
         })
@@ -179,7 +210,7 @@ describe('Skill', () => {
             })
 
             expect(skill.type).to.equal(SkillType.BOOST)
-            expect(skill.percentage).to.equal(5)
+            expect(skill.percentageBase).to.equal(5)
             expect(skill.boss).to.be.false
             expect(skill.condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, null, null))
         })
@@ -190,7 +221,7 @@ describe('Skill', () => {
                 details: "属性【FIRE】かつ【ATTACK】の攻撃力10％アップ"
             })
 
-            expect(skill.percentage).to.equal(10)
+            expect(skill.percentageBase).to.equal(10)
             expect(skill.boss).to.be.false
             expect(skill.condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, Attribute.FIRE, null))
         })
@@ -201,7 +232,7 @@ describe('Skill', () => {
                 details: "バトル後半で、\n属性【AQUA】かつ【ATTACK】の攻撃力17％アップ"
             })
 
-            expect(skill.percentage).to.equal(17)
+            expect(skill.percentageBase).to.equal(17)
             expect(skill.boss).to.be.true
             expect(skill.condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null))
         })
@@ -212,7 +243,7 @@ describe('Skill', () => {
                 details: "【日向 美海】かつ【ATTACK】の攻撃力15％アップ"
             })
 
-            expect(skill.percentage).to.equal(15)
+            expect(skill.percentageBase).to.equal(15)
             expect(skill.boss).to.be.false
             expect(skill.condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, null, ['日向 美海']))
         })
@@ -223,7 +254,7 @@ describe('Skill', () => {
                 details: "バトル後半で、【逢坂 茜】の攻撃力15％アップ"
             })
 
-            expect(skill.percentage).to.equal(15)
+            expect(skill.percentageBase).to.equal(15)
             expect(skill.boss).to.be.true
             expect(skill.condition).to.deep.equal(new CardMatcher(null, null, ['逢坂 茜']))
         })
@@ -234,7 +265,7 @@ describe('Skill', () => {
                 details: "【藤沢 柚子】と【三角 葵】の攻撃力5％アップ"
             })
 
-            expect(skill.percentage).to.equal(5)
+            expect(skill.percentageBase).to.equal(5)
             expect(skill.boss).to.be.false
             expect(skill.condition).to.deep.equal(new CardMatcher(null, null, ['藤沢 柚子','三角 葵']))
         })
@@ -245,7 +276,7 @@ describe('Skill', () => {
                 details: "ダメージカウント0の時、【ATTACK】の攻撃14％アップ"
             })
 
-            expect(skill.percentage).to.equal(14)
+            expect(skill.percentageBase).to.equal(14)
             expect(skill.boss).to.be.false
             expect(skill.condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, null, null))
         })
@@ -256,7 +287,7 @@ describe('Skill', () => {
                 details: "ライフ100％時、【ATTACK】の攻撃12％アップ"
             })
 
-            expect(skill.percentage).to.equal(12)
+            expect(skill.percentageBase).to.equal(12)
             expect(skill.boss).to.be.false
             expect(skill.condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, null, null))
         })
@@ -267,7 +298,7 @@ describe('Skill', () => {
                 details: "【ATTACK】の攻撃力12％アップ\n被弾時のダメージが2倍になる"
             })
 
-            expect(skill.percentage).to.equal(12)
+            expect(skill.percentageBase).to.equal(12)
             expect(skill.boss).to.be.false
             expect(skill.condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, null, null))
         })

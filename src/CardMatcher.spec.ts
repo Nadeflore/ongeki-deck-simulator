@@ -11,11 +11,11 @@ describe('CardMatcher', () => {
             const matcher = new CardMatcher(SkillType.ATTACK, null, null)
 
             const cardBoost = new Card()
-            cardBoost.baseSkill = new Skill(SkillType.BOOST)
+            cardBoost.skill = new Skill(SkillType.BOOST)
             expect(matcher.match(cardBoost)).to.be.false
 
             const cardAttack = new Card()
-            cardAttack.baseSkill = new Skill(SkillType.ATTACK)
+            cardAttack.skill = new Skill(SkillType.ATTACK)
             expect(matcher.match(cardAttack)).to.be.true
         })
         it('should return whether attribute match', () => {
@@ -54,7 +54,7 @@ describe('CardMatcher', () => {
             const matcher = new CardMatcher(SkillType.ATTACK, Attribute.FIRE, ['結城 莉玖'])
 
             const card = new Card()
-            card.baseSkill = new Skill(SkillType.BOOST)
+            card.skill = new Skill(SkillType.BOOST)
             card.attribute = Attribute.LEAF
             card.characterName = '藍原 椿'
 
@@ -69,7 +69,7 @@ describe('CardMatcher', () => {
             // Name and attribute match, but not skill
             expect(matcher.match(card)).to.be.false
 
-            card.baseSkill = new Skill(SkillType.ATTACK)
+            card.skill = new Skill(SkillType.ATTACK)
             // Everything match
             expect(matcher.match(card)).to.be.true
         })

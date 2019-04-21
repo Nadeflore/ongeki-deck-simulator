@@ -1,34 +1,2870 @@
 [
     {
+        "cardName": "",
+        "characterName": "星咲 あかり",
         "rarity": "N",
         "attribute": "FIRE",
-        "characterName": "星咲 あかり",
         "cardNumber": "1.00-0001",
-        "baseSkill": {
+        "skill": {
             "type": "ATTACK",
             "name": "ボスアタック +5",
             "details": "バトル後半で、自身の攻撃力5％アップ"
-        },
-        "choukaikaSkill": {
-            "type": "ATTACK",
-            "name": "ボスアタック +25",
-            "details": "バトル後半で、自身の攻撃力25％アップ"
         }
     },
     {
+        "cardName": "表情：笑顔",
+        "characterName": "星咲 あかり",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0002",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "私服",
+        "characterName": "星咲 あかり",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0003",
+        "skill": {
+            "type": "ASSIST",
+            "name": "SIDE-Lアシスト +3",
+            "details": "ノーツ【SIDE-L】を自動で攻撃する\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "体操着",
+        "characterName": "星咲 あかり",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0004",
+        "skill": {
+            "type": "BOOST",
+            "name": "ブースト +5",
+            "details": "【ATTACK】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "シューター・ドレス",
+        "characterName": "星咲 あかり",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0005",
+        "skill": {
+            "type": "GUARD",
+            "name": "リーフガード +20",
+            "details": "属性【LEAF】からのダメージ20％軽減\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "シュータードレス・全身ver.",
+        "characterName": "星咲 あかり",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0006",
+        "skill": {
+            "type": "BOOST",
+            "name": "あかりブースト +7",
+            "details": "【星咲 あかり】かつ【ATTACK】の攻撃力7％アップ"
+        }
+    },
+    {
+        "cardName": "ようこそ！奏坂へ！",
+        "characterName": "星咲 あかり",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0007",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスファイアブースト＋15",
+            "details": "バトル後半で、属性【FIRE】かつ【ATTACK】の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "目指せ！いっぱいのエール！",
+        "characterName": "星咲 あかり",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0008",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +10",
+            "details": "自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "揺るぎない想い",
+        "characterName": "星咲 あかり",
+        "rarity": "SSR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0009",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +20",
+            "details": "バトル後半で、自身の攻撃力20％アップ"
+        }
+    },
+    {
+        "cardName": "デイドリーム・フェアリーズ",
+        "characterName": "星咲 あかり",
+        "rarity": "SSR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0010",
+        "skill": {
+            "type": "BOOST",
+            "name": "ファイアブースト +20",
+            "details": "属性【FIRE】かつ【ATTACK】の攻撃力20％アップ"
+        }
+    },
+    {
+        "cardName": "",
+        "characterName": "藤沢 柚子",
+        "rarity": "N",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0011",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +5",
+            "details": "バトル後半で、自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "表情：むすぅ",
+        "characterName": "藤沢 柚子",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0012",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "私服",
+        "characterName": "藤沢 柚子",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0013",
+        "skill": {
+            "type": "ASSIST",
+            "name": "SIDE-Lアシスト +3",
+            "details": "ノーツ【SIDE-L】を自動で攻撃する\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "体操着",
+        "characterName": "藤沢 柚子",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0014",
+        "skill": {
+            "type": "BOOST",
+            "name": "ブースト +5",
+            "details": "【ATTACK】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "シューター・ドレス",
+        "characterName": "藤沢 柚子",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0015",
+        "skill": {
+            "type": "GUARD",
+            "name": "アクアガード +20",
+            "details": "属性【AQUA】からのダメージ20％軽減\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "シュータードレス：全身ver.",
+        "characterName": "藤沢 柚子",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0016",
+        "skill": {
+            "type": "BOOST",
+            "name": "柚子ブースト +7",
+            "details": "【藤沢 柚子】かつ【ATTACK】の攻撃力7％アップ"
+        }
+    },
+    {
+        "cardName": "笑顔のお裾分け",
+        "characterName": "藤沢 柚子",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0017",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスリーフブースト +15",
+            "details": "バトル後半で、属性【LEAF】かつ【ATTACK】の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "目指せ！いっぱいのエール！",
+        "characterName": "藤沢 柚子",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0018",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +10",
+            "details": "自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "ハッピー☆マジック",
+        "characterName": "藤沢 柚子",
+        "rarity": "SSR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0019",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +20",
+            "details": "バトル後半で、自身の攻撃力20％アップ"
+        }
+    },
+    {
+        "cardName": "デイドリーム・フェアリーズ",
+        "characterName": "藤沢 柚子",
+        "rarity": "SSR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0020",
+        "skill": {
+            "type": "BOOST",
+            "name": "リーフブースト +20",
+            "details": "属性【LEAF】かつ【ATTACK】の攻撃力20％アップ"
+        }
+    },
+    {
+        "cardName": "",
+        "characterName": "三角 葵",
+        "rarity": "N",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0021",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +5",
+            "details": "バトル後半で、自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "表情：恥じらい",
+        "characterName": "三角 葵",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0022",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "私服",
+        "characterName": "三角 葵",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0023",
+        "skill": {
+            "type": "ASSIST",
+            "name": "SIDE‐Lアシスト+3",
+            "details": "ノーツ【SIDE‐L】を自動で攻撃する\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "体操着",
+        "characterName": "三角 葵",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0024",
+        "skill": {
+            "type": "BOOST",
+            "name": "ブースト+5",
+            "details": "【ATTACK】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "シューター・ドレス",
+        "characterName": "三角 葵",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0025",
+        "skill": {
+            "type": "GUARD",
+            "name": "ファイアガード +20",
+            "details": "属性【FIRE】からのダメージ20％軽減\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "シュータードレス・全身ver.",
+        "characterName": "三角 葵",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0026",
+        "skill": {
+            "type": "BOOST",
+            "name": "葵ブースト+7",
+            "details": "【三角葵】かつ【ATTACK】の攻撃力7％アップ"
+        }
+    },
+    {
+        "cardName": "ね？簡単でしょ？",
+        "characterName": "三角 葵",
         "rarity": "SR",
         "attribute": "AQUA",
+        "cardNumber": "1.00-0027",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスアクアブースト+15",
+            "details": "バトル後半で、属性【AQUA】かつ【ATTACK】の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "目指せ！いっぱいのエール！",
+        "characterName": "三角 葵",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0028",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +10",
+            "details": "自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "ワールズエンド・ブルー",
+        "characterName": "三角 葵",
+        "rarity": "SSR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0029",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +20",
+            "details": "バトル後半で、自身の攻撃力20％アップ"
+        }
+    },
+    {
+        "cardName": "デイドリーム・フェアリーズ",
+        "characterName": "三角 葵",
+        "rarity": "SSR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0030",
+        "skill": {
+            "type": "BOOST",
+            "name": "アクアブースト +20",
+            "details": "属性【AQUA】かつ【ATTACK】の攻撃力20％アップ"
+        }
+    },
+    {
+        "cardName": "",
+        "characterName": "高瀬 梨緒",
+        "rarity": "N",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0031",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +5",
+            "details": "バトル後半で、自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "表情：むかっ",
+        "characterName": "高瀬 梨緒",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0032",
+        "skill": {
+            "type": "GUARD",
+            "name": "ファイアガード +20",
+            "details": "属性【FIRE】からのダメージ20％軽減\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "体操着",
+        "characterName": "高瀬 梨緒",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0033",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "シューター・ドレス",
+        "characterName": "高瀬 梨緒",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0034",
+        "skill": {
+            "type": "BOOST",
+            "name": "ブースト +5",
+            "details": "【ATTACK】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "シュータードレス・全身ver.",
+        "characterName": "高瀬 梨緒",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0035",
+        "skill": {
+            "type": "BOOST",
+            "name": "梨緒ブースト +7",
+            "details": "【高瀬 梨緒】かつ【ATTACK】の攻撃力7％アップ"
+        }
+    },
+    {
+        "cardName": "素直になれないお年頃",
+        "characterName": "高瀬 梨緒",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0036",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "自称・超絶最強、登場！",
+        "characterName": "高瀬 梨緒",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0037",
+        "skill": {
+            "type": "ASSIST",
+            "name": "SIDE-Rアシスト +5",
+            "details": "ノーツ【SIDE-R】を自動で攻撃する\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "カフェ de スクランブル",
+        "characterName": "高瀬 梨緒",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0038",
+        "skill": {
+            "type": "BOOST",
+            "name": "アクアブースト +10",
+            "details": "属性【AQUA】かつ【ATTACK】の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "ジェットストライクリッパー",
+        "characterName": "高瀬 梨緒",
+        "rarity": "SSR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0039",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボス梨緒フュージョン +7",
+            "details": "バトル後半で、【高瀬 梨緒】のカード1枚につき、\n自身の攻撃力7％アップ"
+        }
+    },
+    {
+        "cardName": "",
+        "characterName": "結城 莉玖",
+        "rarity": "N",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0040",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +5",
+            "details": "バトル後半で、自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "表情：ドヤ",
+        "characterName": "結城 莉玖",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0041",
+        "skill": {
+            "type": "GUARD",
+            "name": "リーフガード +20",
+            "details": "属性【LEAF】からのダメージ20％軽減\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "体操着",
+        "characterName": "結城 莉玖",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0042",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "シューター・ドレス",
+        "characterName": "結城 莉玖",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0043",
+        "skill": {
+            "type": "BOOST",
+            "name": "ブースト +5",
+            "details": "【ATTACK】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "シュータードレス・全身ver.",
+        "characterName": "結城 莉玖",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0044",
+        "skill": {
+            "type": "BOOST",
+            "name": "莉玖ブースト +7",
+            "details": "【結城 莉玖】かつ【ATTACK】の攻撃力7％アップ"
+        }
+    },
+    {
+        "cardName": "未来のロックスター",
+        "characterName": "結城 莉玖",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0045",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "嘘とがおー！とかたき討ち",
+        "characterName": "結城 莉玖",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0046",
+        "skill": {
+            "type": "ASSIST",
+            "name": "SIDE-Rアシスト +5",
+            "details": "ノーツ【SIDE-R】を自動で攻撃する\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "カフェ de スクランブル",
+        "characterName": "結城 莉玖",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0047",
+        "skill": {
+            "type": "BOOST",
+            "name": "ファイアブースト +10",
+            "details": "属性【FIRE】かつ【ATTACK】の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "リトルギターモンスター",
+        "characterName": "結城 莉玖",
+        "rarity": "SSR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0048",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボス莉玖フュージョン +7",
+            "details": "バトル後半で、【結城 莉玖】のカード1枚につき、\n自身の攻撃力7％アップ"
+        }
+    },
+    {
+        "cardName": "",
+        "characterName": "藍原 椿",
+        "rarity": "N",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0049",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +5",
+            "details": "バトル後半で、自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "表情：びっくり",
+        "characterName": "藍原 椿",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0050",
+        "skill": {
+            "type": "GUARD",
+            "name": "アクアガード +20",
+            "details": "属性【AQUA】からのダメージ20％軽減\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "体操着",
+        "characterName": "藍原 椿",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0051",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "シューター・ドレス",
+        "characterName": "藍原 椿",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0052",
+        "skill": {
+            "type": "BOOST",
+            "name": "ブースト +5",
+            "details": "【ATTACK】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "シュータードレス・全身ver.",
+        "characterName": "藍原 椿",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0053",
+        "skill": {
+            "type": "BOOST",
+            "name": "椿ブースト +7",
+            "details": "【藍原 椿】かつ【ATTACK】の攻撃力7％アップ"
+        }
+    },
+    {
+        "cardName": "夕暮れノスタルジー",
+        "characterName": "藍原 椿",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0054",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "嘘とがおー！とかたき討ち",
+        "characterName": "藍原 椿",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0055",
+        "skill": {
+            "type": "ASSIST",
+            "name": "SIDE-Rアシスト +5",
+            "details": "ノーツ【SIDE-R】を自動で攻撃する\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "カフェ de スクランブル",
+        "characterName": "藍原 椿",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0056",
+        "skill": {
+            "type": "BOOST",
+            "name": "リーフブースト +10",
+            "details": "属性【LEAF】かつ【ATTACK】の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "サディスティック・スマイル",
+        "characterName": "藍原 椿",
+        "rarity": "SSR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0057",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボス椿フュージョン +7",
+            "details": "バトル後半で、【藍原 椿】のカード1枚につき、\n自身の攻撃力7％アップ"
+        }
+    },
+    {
+        "cardName": "",
+        "characterName": "桜井 春菜",
+        "rarity": "N",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0058",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +5",
+            "details": "バトル後半で、自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "表情：笑顔",
+        "characterName": "桜井 春菜",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0059",
+        "skill": {
+            "type": "BOOST",
+            "name": "ブースト +5",
+            "details": "【ATTACK】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "体操着",
+        "characterName": "桜井 春菜",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0060",
+        "skill": {
+            "type": "GUARD",
+            "name": "リーフガード +20",
+            "details": "属性【LEAF】からのダメージ20％軽減\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "シュータードレス・全身ver.",
+        "characterName": "桜井 春菜",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0061",
+        "skill": {
+            "type": "BOOST",
+            "name": "春菜ブースト +7",
+            "details": "【桜井 春菜】かつ【ATTACK】の攻撃力7％アップ"
+        }
+    },
+    {
+        "cardName": "これは味見だから…！",
+        "characterName": "桜井 春菜",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0062",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +11",
+            "details": "自身の攻撃力11％アップ"
+        }
+    },
+    {
+        "cardName": "",
+        "characterName": "早乙女 彩華",
+        "rarity": "N",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0063",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +5",
+            "details": "バトル後半で、自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "表情：ウィンク",
+        "characterName": "早乙女 彩華",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0064",
+        "skill": {
+            "type": "BOOST",
+            "name": "ブースト +5",
+            "details": "【ATTACK】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "体操着",
+        "characterName": "早乙女 彩華",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0065",
+        "skill": {
+            "type": "GUARD",
+            "name": "ファイアガード +20",
+            "details": "属性【FIRE】からのダメージ20％軽減\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "シュータードレス・全身ver.",
+        "characterName": "早乙女 彩華",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0066",
+        "skill": {
+            "type": "BOOST",
+            "name": "彩華ブースト +7",
+            "details": "【早乙女 彩華】かつ【ATTACK】の攻撃力7％アップ"
+        }
+    },
+    {
+        "cardName": "しーっ！内緒だよ？",
+        "characterName": "早乙女 彩華",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0067",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +11",
+            "details": "自身の攻撃力11％アップ"
+        }
+    },
+    {
+        "cardName": "",
+        "characterName": "九條 楓",
+        "rarity": "N",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0068",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +5",
+            "details": "バトル後半で、自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "表情：剣幕",
+        "characterName": "九條 楓",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0069",
+        "skill": {
+            "type": "BOOST",
+            "name": "ブースト +5",
+            "details": "【ATTACK】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "体操着",
+        "characterName": "九條 楓",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0070",
+        "skill": {
+            "type": "GUARD",
+            "name": "アクアガード+20",
+            "details": "属性【AQUA】からのダメージ20％軽減\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "シュータードレス・全身ver.",
+        "characterName": "九條 楓",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0071",
+        "skill": {
+            "type": "BOOST",
+            "name": "楓ブースト +7",
+            "details": "【九條 楓】かつ【ATTACK】の攻撃力7％アップ"
+        }
+    },
+    {
+        "cardName": "シューター・ドレス",
+        "characterName": "桜井 春菜",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0072",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "ハルちゃん印のお弁当",
+        "characterName": "桜井 春菜",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0073",
+        "skill": {
+            "type": "GUARD",
+            "name": "リーフガード +30",
+            "details": "属性【LEAF】からのダメージ30％軽減\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "フラワリーブライド",
+        "characterName": "桜井 春菜",
+        "rarity": "SSR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0074",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +15",
+            "details": "自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "シューター・ドレス",
+        "characterName": "早乙女 彩華",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0075",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "ハルちゃん印のお弁当",
+        "characterName": "早乙女 彩華",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0076",
+        "skill": {
+            "type": "GUARD",
+            "name": "ファイアガード +30",
+            "details": "属性【FIRE】からのダメージ30％軽減\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "爆アゲ☆バニーガール",
+        "characterName": "早乙女 彩華",
+        "rarity": "SSR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0077",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +15",
+            "details": "自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "シューター・ドレス",
+        "characterName": "九條 楓",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0078",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "雨傘を差して",
+        "characterName": "九條 楓",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0079",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +11",
+            "details": "自身の攻撃力11％アップ"
+        }
+    },
+    {
+        "cardName": "波乱！副会長の通告！",
+        "characterName": "九條 楓",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0080",
+        "skill": {
+            "type": "GUARD",
+            "name": "アクアガード +30",
+            "details": "属性【AQUA】からのダメージ30％軽減\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "",
+        "characterName": "井之原 小星",
+        "rarity": "N",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0081",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +5",
+            "details": "バトル後半で、自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "表情：キラキラ",
+        "characterName": "井之原 小星",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0082",
+        "skill": {
+            "type": "GUARD",
+            "name": "アクアガード +35（危）",
+            "details": "属性【AQUA】からのダメージ35％軽減\n自身の攻撃力3％アップ\nミス1回につき3％ダメージ"
+        }
+    },
+    {
+        "cardName": "体操着",
+        "characterName": "井之原 小星",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0083",
+        "skill": {
+            "type": "GUARD",
+            "name": "ボス全属性ガード +35",
+            "details": "バトル後半で、ダメージ35％軽減\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "シューター・ドレス",
+        "characterName": "井之原 小星",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0084",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "シュータードレス・全身ver.",
+        "characterName": "井之原 小星",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0085",
+        "skill": {
+            "type": "BOOST",
+            "name": "小星ブースト +7",
+            "details": "【井之原 小星】かつ【ATTACK】の攻撃力7％アップ"
+        }
+    },
+    {
+        "cardName": "ぐーたらゲーマー",
+        "characterName": "井之原 小星",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0086",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ノーダメアタック +14",
+            "details": "ダメージカウント0の時、自身の攻撃14％アップ"
+        }
+    },
+    {
+        "cardName": "小星と咲姫が あらわれた！",
+        "characterName": "井之原 小星",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0087",
+        "skill": {
+            "type": "BOOST",
+            "name": "まんたんブースト +12",
+            "details": "ライフ100％時、【ATTACK】の攻撃12％アップ"
+        }
+    },
+    {
+        "cardName": "",
+        "characterName": "柏木 咲姫",
+        "rarity": "N",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0088",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +5",
+            "details": "バトル後半で、自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "表情：恥じらい",
+        "characterName": "柏木 咲姫",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0089",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +20（危）",
+            "details": "自身の攻撃力20％アップ\n被弾時のダメージが2倍になる"
+        }
+    },
+    {
+        "cardName": "体操着",
+        "characterName": "柏木 咲姫",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0090",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "シューター・ドレス",
+        "characterName": "柏木 咲姫",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0091",
+        "skill": {
+            "type": "GUARD",
+            "name": "ボス全属性ガード +35",
+            "details": "バトル後半で、ダメージ35％軽減\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "シュータードレス・全身ver.",
+        "characterName": "柏木 咲姫",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0092",
+        "skill": {
+            "type": "BOOST",
+            "name": "咲姫ブースト +7",
+            "details": "【柏木 咲姫】かつ【ATTACK】の攻撃力7％アップ"
+        }
+    },
+    {
+        "cardName": "お姫様は隙だらけ",
+        "characterName": "柏木 咲姫",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0093",
+        "skill": {
+            "type": "GUARD",
+            "name": "ファイアガード +30",
+            "details": "属性【FIRE】からのダメージ30％軽減\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "小星と咲姫が あらわれた！",
+        "characterName": "柏木 咲姫",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0094",
+        "skill": {
+            "type": "BOOST",
+            "name": "ノーダメブースト +14",
+            "details": "ダメージカウント0の時、【ATTACK】の攻撃14％アップ"
+        }
+    },
+    {
+        "cardName": "紫電一閃",
+        "characterName": "九條 楓",
+        "rarity": "SSR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0095",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +15",
+            "details": "自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "清く、凛々しく、美しく",
+        "characterName": "柏木 咲姫",
+        "rarity": "SSR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0096",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +15",
+            "details": "自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "",
+        "characterName": "逢坂 茜",
+        "rarity": "N",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0097",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +5",
+            "details": "バトル後半で、自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "表情：にやり",
+        "characterName": "逢坂 茜",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0098",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +20（危）",
+            "details": "自身の攻撃力20％アップ\n被弾時のダメージが2倍になる"
+        }
+    },
+    {
+        "cardName": "体操着",
+        "characterName": "逢坂 茜",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0099",
+        "skill": {
+            "type": "ATTACK",
+            "name": "まんたん茜フュージョン +5",
+            "details": "ライフ100％時、【逢坂 茜】のカード1枚につき、\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "シューター・ドレス",
+        "characterName": "逢坂 茜",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0100",
+        "skill": {
+            "type": "ATTACK",
+            "name": "茜フュージョン +4",
+            "details": "【逢坂 茜】のカード1枚につき、自身の攻撃力4％アップ"
+        }
+    },
+    {
+        "cardName": "シュータードレス・全身ver.",
+        "characterName": "逢坂 茜",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0101",
+        "skill": {
+            "type": "BOOST",
+            "name": "茜ブースト +7",
+            "details": "【逢坂 茜】かつ【ATTACK】の攻撃力7％アップ"
+        }
+    },
+    {
+        "cardName": "はちゃめちゃ生徒会長",
+        "characterName": "逢坂 茜",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0102",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボス茜ブースト +15",
+            "details": "バトル後半で、【逢坂 茜】の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "世界征服のお誘い",
+        "characterName": "逢坂 茜",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0103",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボス茜フュージョン +6",
+            "details": "バトル後半で、【逢坂 茜】のカード1枚につき、\n自身の攻撃力6％アップ"
+        }
+    },
+    {
+        "cardName": "ドジっ子トラブル",
+        "characterName": "星咲 あかり",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0104",
+        "skill": {
+            "type": "ASSIST",
+            "name": "SIDE-LRアシスト +5",
+            "details": "ノーツ【SIDE】を自動で攻撃する\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "お着替えターイム！",
+        "characterName": "藤沢 柚子",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0105",
+        "skill": {
+            "type": "ASSIST",
+            "name": "SIDE-LRアシスト +5",
+            "details": "ノーツ【SIDE】を自動で攻撃する\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "かちこちストレッチ",
+        "characterName": "三角 葵",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0106",
+        "skill": {
+            "type": "ASSIST",
+            "name": "SIDE-LRアシスト +5",
+            "details": "ノーツ【SIDE】を自動で攻撃する\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "お任せオートプレイ",
+        "characterName": "井之原 小星",
+        "rarity": "SSR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-0107",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +15",
+            "details": "自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "ショット＆デストロイ",
+        "characterName": "逢坂 茜",
+        "rarity": "SSR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-0108",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +15",
+            "details": "自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "",
+        "characterName": "珠洲島 有栖",
+        "rarity": "N",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0109",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +5",
+            "details": "バトル後半で、自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "表情：照れ",
+        "characterName": "珠洲島 有栖",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0110",
+        "skill": {
+            "type": "BOOST",
+            "name": "ブースト +12（危）",
+            "details": "【ATTACK】の攻撃力12％アップ\n被弾時のダメージが2倍になる"
+        }
+    },
+    {
+        "cardName": "体操着",
+        "characterName": "珠洲島 有栖",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0111",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +12",
+            "details": "バトル後半で、自身の攻撃力12％アップ"
+        }
+    },
+    {
+        "cardName": "シュータードレス",
+        "characterName": "珠洲島 有栖",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0112",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +10",
+            "details": "自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "シュータードレス・全身ver.",
+        "characterName": "珠洲島 有栖",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0113",
+        "skill": {
+            "type": "BOOST",
+            "name": "有栖ブースト +7",
+            "details": "【珠洲島 有栖】かつ【ATTACK】の攻撃力7％アップ"
+        }
+    },
+    {
+        "cardName": "優雅なティータイム",
+        "characterName": "珠洲島 有栖",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0114",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +17",
+            "details": "バトル後半で、自身の攻撃力17％アップ"
+        }
+    },
+    {
+        "cardName": "黒幕はぬいぐるみ？",
+        "characterName": "珠洲島 有栖",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-0115",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +11",
+            "details": "自身の攻撃力11％アップ"
+        }
+    },
+    {
+        "cardName": "ステージ",
+        "characterName": "戸山香澄",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0001",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "カラフルポッピン！",
+        "characterName": "戸山香澄",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0002",
+        "skill": {
+            "type": "ASSIST",
+            "name": "SIDE-Lアシスト +3",
+            "details": "ノーツ【SIDE-L】を自動で攻撃する\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "約束のキャンディ",
+        "characterName": "戸山香澄",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0003",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "ステージ",
+        "characterName": "美竹蘭",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0004",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "グロウアップロック",
+        "characterName": "美竹蘭",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0005",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスファイアブースト +10",
+            "details": "バトル後半で、属性【FIRE】かつ【ATTACK】の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "断ち切った迷い",
+        "characterName": "美竹蘭",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0006",
+        "skill": {
+            "type": "GUARD",
+            "name": "リーフガード +30",
+            "details": "属性【LEAF】からのダメージ30％軽減\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "ステージ",
+        "characterName": "丸山彩",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0007",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "煌めくステージへ",
+        "characterName": "丸山彩",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0008",
+        "skill": {
+            "type": "ASSIST",
+            "name": "SIDE-Lアシスト +3",
+            "details": "ノーツ【SIDE-L】を自動で攻撃する\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "必殺アイドルポーズ☆",
+        "characterName": "丸山彩",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0009",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "ステージ",
+        "characterName": "湊友希那",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0010",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "重なり合う青薔薇",
+        "characterName": "湊友希那",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0011",
+        "skill": {
+            "type": "ASSIST",
+            "name": "SIDE-Lアシスト +3",
+            "details": "ノーツ【SIDE-L】を自動で攻撃する\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "歌姫の覚悟",
+        "characterName": "湊友希那",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0012",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "ステージ",
+        "characterName": "弦巻こころ",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0013",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "笑顔のマジック",
+        "characterName": "弦巻こころ",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0014",
+        "skill": {
+            "type": "GUARD",
+            "name": "アクアガード +20",
+            "details": "属性【AQUA】からのダメージ20％軽減\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "無敵のヒーロー",
+        "characterName": "弦巻こころ",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0015",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスリーフブースト +15",
+            "details": "バトル後半で、属性【LEAF】かつ【ATTACK】の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "ガールズバンドパーティ！",
+        "characterName": "戸山香澄",
+        "rarity": "SSR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0016",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +17",
+            "details": "バトル後半で、自身の攻撃力17％アップ"
+        }
+    },
+    {
+        "cardName": "東方Project",
+        "characterName": "博麗 霊夢",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0017",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスファイアブースト +10",
+            "details": "バトル後半で、属性【FIRE】かつ【ATTACK】の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "楽園の素敵な巫女",
+        "characterName": "博麗 霊夢",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0018",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "東方Project",
+        "characterName": "霧雨 魔理沙",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0019",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "普通の魔法使い",
+        "characterName": "霧雨 魔理沙",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0020",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "クインティプル☆すまいる",
+        "characterName": "戸山香澄",
+        "rarity": "SSR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0021",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスファイアブースト +18",
+            "details": "バトル後半で、属性【FIRE】かつ【ATTACK】の攻撃力18％アップ"
+        }
+    },
+    {
+        "cardName": "東方紅魔郷",
+        "characterName": "紅 美鈴",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0022",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "華人小娘",
+        "characterName": "紅 美鈴",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0023",
+        "skill": {
+            "type": "GUARD",
+            "name": "リーフガード +30",
+            "details": "属性【LEAF】からのダメージ30％軽減\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "東方紅魔郷",
+        "characterName": "パチュリー・ノーレッジ",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0024",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "動かない大図書館",
+        "characterName": "パチュリー・ノーレッジ",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0025",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスリーフブースト +15",
+            "details": "バトル後半で、属性【LEAF】かつ【ATTACK】の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "東方紅魔郷",
+        "characterName": "十六夜 咲夜",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0026",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "完全で瀟洒な従者",
+        "characterName": "十六夜 咲夜",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0027",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスアクアブースト+15",
+            "details": "バトル後半で、属性【AQUA】かつ【ATTACK】の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "東方紅魔郷",
+        "characterName": "レミリア・スカーレット",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0028",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "永遠に紅い幼き月",
+        "characterName": "レミリア・スカーレット",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0029",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "東方紅魔郷",
+        "characterName": "フランドール・スカーレット",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0030",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "悪魔の妹",
+        "characterName": "フランドール・スカーレット",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0031",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "神槍「スピア・ザ・グングニル」",
+        "characterName": "レミリア・スカーレット",
+        "rarity": "SSR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0032",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +17",
+            "details": "バトル後半で、自身の攻撃力17％アップ"
+        }
+    },
+    {
+        "cardName": "禁忌「レーヴァテイン」",
+        "characterName": "フランドール・スカーレット",
+        "rarity": "SSR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0033",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +15",
+            "details": "自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "アークウィザード",
+        "characterName": "めぐみん",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0034",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "水辺にて",
+        "characterName": "めぐみん",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0035",
+        "skill": {
+            "type": "BOOST",
+            "name": "めぐみんブースト +10",
+            "details": "【めぐみん】かつ【ATTACK】の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "アークプリースト",
+        "characterName": "アクア",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0036",
+        "skill": {
+            "type": "BOOST",
+            "name": "ブースト +5",
+            "details": "【ATTACK】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "セイクリッド飲みくらべ",
+        "characterName": "アクア",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0037",
+        "skill": {
+            "type": "ASSIST",
+            "name": "SIDE-Lアシスト +5",
+            "details": "ノーツ【SIDE-L】を自動で攻撃する\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "クルセイダー",
+        "characterName": "ダクネス",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0038",
+        "skill": {
+            "type": "GUARD",
+            "name": "アクアガード +20",
+            "details": "属性【AQUA】からのダメージ20％軽減\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "爆風に吹かれて",
+        "characterName": "ダクネス",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0039",
+        "skill": {
+            "type": "GUARD",
+            "name": "アクアガード +30",
+            "details": "属性【AQUA】からのダメージ30％軽減\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "我が名はめぐみん",
+        "characterName": "めぐみん",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0040",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "めぐみんのいたずら",
+        "characterName": "アクア",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0041",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスアクアブースト+15",
+            "details": "バトル後半で、属性【AQUA】かつ【ATTACK】の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "露天風呂",
+        "characterName": "ダクネス",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0042",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスリーフブースト +15",
+            "details": "バトル後半で、属性【LEAF】かつ【ATTACK】の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "爆裂魔法",
+        "characterName": "めぐみん",
+        "rarity": "SSR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0043",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +17",
+            "details": "バトル後半で、自身の攻撃力17％アップ"
+        }
+    },
+    {
+        "cardName": "紅魔族の休息",
+        "characterName": "めぐみん",
+        "rarity": "SSR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0044",
+        "skill": {
+            "type": "BOOST",
+            "name": "めぐみんブースト +15",
+            "details": "【めぐみん】かつ【ATTACK】の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "霊符「夢想封印」",
+        "characterName": "博麗 霊夢",
+        "rarity": "SSR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0045",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスファイアブースト +18",
+            "details": "バトル後半で、\n属性【FIRE】かつ【ATTACK】の攻撃力18％アップ"
+        }
+    },
+    {
+        "cardName": "恋符「マスタースパーク」",
+        "characterName": "霧雨 魔理沙",
+        "rarity": "SSR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0046",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +13",
+            "details": "自身の攻撃力13％アップ"
+        }
+    },
+    {
+        "cardName": "最高のステージに！",
+        "characterName": "戸山香澄",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0047",
+        "skill": {
+            "type": "ASSIST",
+            "name": "SIDE-Rアシスト +5",
+            "details": "ノーツ【SIDE-R】を自動で攻撃する\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "気合の円陣",
+        "characterName": "戸山香澄",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0048",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスファイアブースト＋15",
+            "details": "バトル後半で、属性【FIRE】かつ【ATTACK】の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "等身大の夜空",
+        "characterName": "美竹蘭",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0049",
+        "skill": {
+            "type": "BOOST",
+            "name": "ファイアブースト +10",
+            "details": "属性【FIRE】かつ【ATTACK】の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "夕焼けの先",
+        "characterName": "美竹蘭",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-E-0050",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "私達のポスター",
+        "characterName": "丸山彩",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0051",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスリーフブースト +15",
+            "details": "バトル後半で、属性【LEAF】かつ【ATTACK】の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "イベント、来てください！",
+        "characterName": "丸山彩",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0052",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "秋晴れ、その先に",
+        "characterName": "湊友希那",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0053",
+        "skill": {
+            "type": "GUARD",
+            "name": "ファイアガード +30",
+            "details": "属性【FIRE】からのダメージ30％軽減\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "見守る目線",
+        "characterName": "湊友希那",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0054",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスアクアブースト+15",
+            "details": "バトル後半で、属性【AQUA】かつ【ATTACK】の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "見習い魔女",
+        "characterName": "弦巻こころ",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0055",
+        "skill": {
+            "type": "GUARD",
+            "name": "アクアガード +30",
+            "details": "属性【AQUA】からのダメージ30％軽減\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "みんなが花マル１等賞！",
+        "characterName": "弦巻こころ",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-E-0056",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "青の世界",
+        "characterName": "日向 美海",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0057",
+        "skill": {
+            "type": "GUARD",
+            "name": "ファイアガード +20",
+            "details": "属性【FIRE】からのダメージ20％軽減\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "謹賀新年",
+        "characterName": "日向 美海",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0058",
+        "skill": {
+            "type": "BOOST",
+            "name": "美海ブースト +10",
+            "details": "【日向 美海】かつ【ATTACK】の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "青の世界",
+        "characterName": "彩城 天音",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0059",
+        "skill": {
+            "type": "BOOST",
+            "name": "ブースト +5",
+            "details": "【ATTACK】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "謹賀新年",
+        "characterName": "彩城 天音",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0060",
+        "skill": {
+            "type": "GUARD",
+            "name": "ファイアガード +30",
+            "details": "属性【FIRE】からのダメージ30％軽減\n自身の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "青の世界",
         "characterName": "東条 遥",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0061",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "謹賀新年",
+        "characterName": "東条 遥",
+        "rarity": "SR",
+        "attribute": "AQUA",
         "cardNumber": "1.00-E-0062",
-        "baseSkill": {
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスアクアブースト+15",
+            "details": "バトル後半で、属性【AQUA】かつ【ATTACK】の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "無限の可能性",
+        "characterName": "日向 美海",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0063",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "みんなの希望",
+        "characterName": "彩城 天音",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0064",
+        "skill": {
             "type": "BOOST",
             "name": "ボスアクアブースト +15",
-            "details": "バトル後半で、\n属性【AQUA】かつ【ATTACK】の攻撃力15％アップ"
-        },
-        "choukaikaSkill": {
+            "details": "バトル後半で、属性【AQUA】かつ【ATTACK】の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "希望の光",
+        "characterName": "東条 遥",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0065",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "メリークリスマス！",
+        "characterName": "日向 美海",
+        "rarity": "SSR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0066",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +17",
+            "details": "バトル後半で、自身の攻撃力17％アップ"
+        }
+    },
+    {
+        "cardName": "常夏の可能性",
+        "characterName": "日向 美海",
+        "rarity": "SSR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-E-0067",
+        "skill": {
             "type": "BOOST",
-            "name": "ボスアクアブースト +17",
-            "details": "バトル後半で、\n属性【AQUA】かつ【ATTACK】の攻撃力17％アップ"
+            "name": "美海ブースト +15",
+            "details": "【日向 美海】かつ【ATTACK】の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "ONGEKI Vocal Collection 01",
+        "characterName": "星咲 あかり",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-P-0001",
+        "skill": {
+            "type": "BOOST",
+            "name": "柚子＆葵ブースト +5",
+            "details": "【藤沢 柚子】と【三角 葵】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "ONGEKI Vocal Collection 01",
+        "characterName": "藤沢 柚子",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-P-0002",
+        "skill": {
+            "type": "BOOST",
+            "name": "あかり＆葵ブースト +5",
+            "details": "【星咲 あかり】と【三角 葵】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "ONGEKI Vocal Collection 01",
+        "characterName": "三角 葵",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-P-0003",
+        "skill": {
+            "type": "BOOST",
+            "name": "あかり＆柚子ブースト +5",
+            "details": "【星咲 あかり】＆【藤沢 柚子】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "ONGEKI Vocal Collection 02",
+        "characterName": "高瀬 梨緒",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.00-P-0004",
+        "skill": {
+            "type": "BOOST",
+            "name": "莉玖＆椿ブースト +5",
+            "details": "【結城 莉玖】と【藍原 椿】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "ONGEKI Vocal Collection 02",
+        "characterName": "結城 莉玖",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.00-P-0005",
+        "skill": {
+            "type": "BOOST",
+            "name": "梨緒＆椿ブースト +5",
+            "details": "【高瀬 梨緒】と【藍原 椿】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "ONGEKI Vocal Collection 02",
+        "characterName": "藍原 椿",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.00-P-0006",
+        "skill": {
+            "type": "BOOST",
+            "name": "梨緒＆莉玖ブースト +5",
+            "details": "【高瀬 梨緒】と【結城 莉玖】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "私服 表情：げげっ",
+        "characterName": "星咲 あかり",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.05-0001",
+        "skill": {
+            "type": "BOOST",
+            "name": "ブースト +5",
+            "details": "【ATTACK】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "私服２",
+        "characterName": "星咲 あかり",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.05-0002",
+        "skill": {
+            "type": "ATTACK",
+            "name": "あかりフュージョン +2",
+            "details": "【星咲 あかり】のカード1枚につき、自身の攻撃力2％アップ"
+        }
+    },
+    {
+        "cardName": "Jump！！ Jump！！ Jump！！",
+        "characterName": "星咲 あかり",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.05-0003",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +14（ノーダメボスアタック +3）",
+            "details": "バトル後半で、自身の攻撃力14％アップ\nダメージカウント0の時、追加で自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "わくわくバイト・ミッション",
+        "characterName": "星咲 あかり",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.05-0004",
+        "skill": {
+            "type": "BOOST",
+            "name": "あかりブースト +12",
+            "details": "【星咲 あかり】かつ【ATTACK】の攻撃力12％アップ"
+        }
+    },
+    {
+        "cardName": "私服 表情：涙目",
+        "characterName": "藤沢 柚子",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-0005",
+        "skill": {
+            "type": "BOOST",
+            "name": "ブースト +5",
+            "details": "【ATTACK】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "私服２",
+        "characterName": "藤沢 柚子",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-0006",
+        "skill": {
+            "type": "ATTACK",
+            "name": "柚子フュージョン +2",
+            "details": "【藤沢 柚子】のカード1枚につき、自身の攻撃力2％アップ"
+        }
+    },
+    {
+        "cardName": "Jump！！ Jump！！ Jump！！",
+        "characterName": "藤沢 柚子",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-0007",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +14（ノーダメボスアタック +3）",
+            "details": "バトル後半で、自身の攻撃力14％アップ\nダメージカウント0の時、追加で自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "わくわくバイト・ミッション",
+        "characterName": "藤沢 柚子",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-0008",
+        "skill": {
+            "type": "BOOST",
+            "name": "柚子ブースト +12",
+            "details": "【藤沢 柚子】かつ【ATTACK】の攻撃力12％アップ"
+        }
+    },
+    {
+        "cardName": "私服２",
+        "characterName": "三角 葵",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.05-0009",
+        "skill": {
+            "type": "ATTACK",
+            "name": "葵フュージョン +2",
+            "details": "【三角 葵】のカード1枚につき、自身の攻撃力2％アップ"
+        }
+    },
+    {
+        "cardName": "Jump！！ Jump！！ Jump！！",
+        "characterName": "三角 葵",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.05-0010",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +14（ノーダメボスアタック +3）",
+            "details": "バトル後半で、自身の攻撃力14％アップ\nダメージカウント0の時、追加で自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "わくわくバイト・ミッション",
+        "characterName": "三角 葵",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.05-0011",
+        "skill": {
+            "type": "BOOST",
+            "name": "葵ブースト +12",
+            "details": "【三角 葵】かつ【ATTACK】の攻撃力12％アップ"
+        }
+    },
+    {
+        "cardName": "恥じらいバレンタイン",
+        "characterName": "藍原 椿",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-0013",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボス椿ブースト +12",
+            "details": "バトル後半で、【藍原 椿】の攻撃力12％アップ"
+        }
+    },
+    {
+        "cardName": "スイート＆スイート",
+        "characterName": "桜井 春菜",
+        "rarity": "SSR",
+        "attribute": "FIRE",
+        "cardNumber": "1.05-0014",
+        "skill": {
+            "type": "ATTACK",
+            "name": "春菜フュージョン +5（ボスアタック +2）",
+            "details": "【桜井 春菜】のカード1枚につき、自身の攻撃力5％アップ\nバトル後半で自身の攻撃力2％アップ"
+        }
+    },
+    {
+        "cardName": "デイドリーム・フェアリーズ",
+        "characterName": "九條 楓",
+        "rarity": "SSR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-0015",
+        "skill": {
+            "type": "BOOST",
+            "name": "リーフブースト +20",
+            "details": "属性【LEAF】かつ【ATTACK】の攻撃力20％アップ"
+        }
+    },
+    {
+        "cardName": "デイドリーム・フェアリーズ",
+        "characterName": "逢坂 茜",
+        "rarity": "SSR",
+        "attribute": "FIRE",
+        "cardNumber": "1.05-0016",
+        "skill": {
+            "type": "BOOST",
+            "name": "ファイアブースト +20",
+            "details": "属性【FIRE】かつ【ATTACK】の攻撃力20％アップ"
+        }
+    },
+    {
+        "cardName": "Jump！！ Jump！！ Jump！！",
+        "characterName": "逢坂 茜",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.05-0017",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +14（ノーダメボスアタック +3）",
+            "details": "バトル後半で、自身の攻撃力14％アップ\nダメージカウント0の時、追加で自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "もふもふシューター",
+        "characterName": "珠洲島 有栖",
+        "rarity": "SSR",
+        "attribute": "AQUA",
+        "cardNumber": "1.05-0018",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスアクアブースト +20",
+            "details": "バトル後半で、属性【AQUA】かつ【ATTACK】の攻撃力20％アップ"
+        }
+    },
+    {
+        "cardName": "デイドリーム・フェアリーズ",
+        "characterName": "珠洲島 有栖",
+        "rarity": "SSR",
+        "attribute": "AQUA",
+        "cardNumber": "1.05-0019",
+        "skill": {
+            "type": "BOOST",
+            "name": "アクアブースト +20",
+            "details": "属性【AQUA】かつ【ATTACK】の攻撃力20％アップ"
+        }
+    },
+    {
+        "cardName": "私服",
+        "characterName": "高瀬 梨緒",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.05-0020",
+        "skill": {
+            "type": "BOOST",
+            "name": "梨緒ブースト +4",
+            "details": "【高瀬 梨緒】の攻撃力4％アップ"
+        }
+    },
+    {
+        "cardName": "ゲーセン☆チャンス！？",
+        "characterName": "高瀬 梨緒",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.05-0021",
+        "skill": {
+            "type": "ATTACK",
+            "name": "まんたんアタック +11",
+            "details": "ライフ100％時、自身の攻撃力11％アップ"
+        }
+    },
+    {
+        "cardName": "私服",
+        "characterName": "結城 莉玖",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.05-0022",
+        "skill": {
+            "type": "BOOST",
+            "name": "莉玖ブースト +4",
+            "details": "【結城 莉玖】の攻撃力4％アップ"
+        }
+    },
+    {
+        "cardName": "ゲーセン☆チャンス！？",
+        "characterName": "結城 莉玖",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.05-0023",
+        "skill": {
+            "type": "ATTACK",
+            "name": "まんたんアタック +11",
+            "details": "ライフ100％時、自身の攻撃力11％アップ"
+        }
+    },
+    {
+        "cardName": "私服",
+        "characterName": "藍原 椿",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-0024",
+        "skill": {
+            "type": "BOOST",
+            "name": "椿ブースト +4",
+            "details": "【藍原 椿】の攻撃力4％アップ"
+        }
+    },
+    {
+        "cardName": "ゲーセン☆チャンス！？",
+        "characterName": "藍原 椿",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-0025",
+        "skill": {
+            "type": "ATTACK",
+            "name": "まんたんアタック +11",
+            "details": "ライフ100％時、自身の攻撃力11％アップ"
+        }
+    },
+    {
+        "cardName": "どっちがどっち？",
+        "characterName": "星咲 あかり",
+        "rarity": "SR",
+        "attribute": "FIRE",
+        "cardNumber": "1.05-0026",
+        "skill": {
+            "type": "ATTACK",
+            "name": "まんたんアタック +12",
+            "details": "ライフ100％時、自身の攻撃力12％アップ"
+        }
+    },
+    {
+        "cardName": "華より団子",
+        "characterName": "藤沢 柚子",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-0027",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ノーダメアタック +14",
+            "details": "ダメージカウント0の時、自身の攻撃14％アップ"
+        }
+    },
+    {
+        "cardName": "私服 表情：笑顔",
+        "characterName": "三角 葵",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.05-0028",
+        "skill": {
+            "type": "BOOST",
+            "name": "ブースト +5",
+            "details": "【ATTACK】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "私服 表情：むー",
+        "characterName": "結城 莉玖",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.05-0029",
+        "skill": {
+            "type": "ASSIST",
+            "name": "SIDE-LRアシスト +3",
+            "details": "ノーツ【SIDE】を自動で攻撃する\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "おひな様は脱力系",
+        "characterName": "井之原 小星",
+        "rarity": "SSR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-0030",
+        "skill": {
+            "type": "ATTACK",
+            "name": "小星フュージョン +5（ボスアタック +2）",
+            "details": "【井之原 小星】のカード1枚につき、自身の攻撃力5％アップ\nバトル後半で自身の攻撃力2％アップ"
+        }
+    },
+    {
+        "cardName": "バーチャル・シンガー",
+        "characterName": "初音ミク",
+        "rarity": "R",
+        "attribute": "AQUA",
+        "cardNumber": "1.05-E-0001",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "電子の歌姫",
+        "characterName": "初音ミク",
+        "rarity": "SR",
+        "attribute": "AQUA",
+        "cardNumber": "1.05-E-0002",
+        "skill": {
+            "type": "BOOST",
+            "name": "アクアブースト +10",
+            "details": "属性【AQUA】かつ【ATTACK】の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "バーチャル・シンガー",
+        "characterName": "鏡音リン",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-E-0003",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "バーチャル・シンガー",
+        "characterName": "巡音ルカ",
+        "rarity": "R",
+        "attribute": "FIRE",
+        "cardNumber": "1.05-E-0004",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "常盤台中学",
+        "characterName": "御坂 美琴",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-E-0005",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "電撃使い",
+        "characterName": "御坂 美琴",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-E-0006",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "常盤台のエース",
+        "characterName": "御坂 美琴",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-E-0007",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスリーフブースト +15",
+            "details": "バトル後半で、属性【LEAF】かつ【ATTACK】の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "常盤台中学",
+        "characterName": "白井 黒子",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-E-0008",
+        "skill": {
+            "type": "GUARD",
+            "name": "アクアガード +20",
+            "details": "属性【AQUA】からのダメージ20％軽減\n自身の攻撃力3％アップ"
+        }
+    },
+    {
+        "cardName": "空間移動",
+        "characterName": "白井 黒子",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-E-0009",
+        "skill": {
+            "type": "ASSIST",
+            "name": "SIDE-LRアシスト +6",
+            "details": "ノーツ【SIDE】を自動で攻撃する\n自身の攻撃力6％アップ"
+        }
+    },
+    {
+        "cardName": "風紀委員ですの！",
+        "characterName": "白井 黒子",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-E-0010",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +10",
+            "details": "自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "ゲコラー",
+        "characterName": "御坂 美琴",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-E-0011",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボス美琴ブースト +16",
+            "details": "バトル後半で、【御坂 美琴】かつ【ATTACK】の攻撃力16％アップ"
+        }
+    },
+    {
+        "cardName": "雷撃の槍",
+        "characterName": "御坂 美琴",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-E-0012",
+        "skill": {
+            "type": "ATTACK",
+            "name": "美琴フュージョン +4",
+            "details": "【御坂 美琴】のカード1枚につき、自身の攻撃力4％アップ"
+        }
+    },
+    {
+        "cardName": "超電磁砲",
+        "characterName": "御坂 美琴",
+        "rarity": "SSR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-E-0013",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +17",
+            "details": "バトル後半で、自身の攻撃力17％アップ"
+        }
+    },
+    {
+        "cardName": "学園都市の電撃姫",
+        "characterName": "御坂 美琴",
+        "rarity": "SSR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-E-0014",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスリーフブースト +18",
+            "details": "バトル後半で、属性【LEAF】かつ【ATTACK】の攻撃力18％アップ"
+        }
+    },
+    {
+        "cardName": "柵川中学",
+        "characterName": "初春 飾利",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-E-0015",
+        "skill": {
+            "type": "BOOST",
+            "name": "ブースト +5",
+            "details": "【ATTACK】の攻撃力5％アップ"
+        }
+    },
+    {
+        "cardName": "定温保存",
+        "characterName": "初春 飾利",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-E-0016",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "いきなり何するんですか佐天さんっ！",
+        "characterName": "初春 飾利",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-E-0017",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボス佐天&初春ブースト +10",
+            "details": "バトル後半で、【佐天 涙子】と【初春 飾利】の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "柵川中学",
+        "characterName": "佐天 涙子",
+        "rarity": "R",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-E-0018",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +10",
+            "details": "バトル後半で、自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "空力使い",
+        "characterName": "佐天 涙子",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-E-0019",
+        "skill": {
+            "type": "ATTACK",
+            "name": "ボスアタック +15",
+            "details": "バトル後半で、自身の攻撃力15％アップ"
+        }
+    },
+    {
+        "cardName": "うーいーはーるーん！！",
+        "characterName": "佐天 涙子",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-E-0020",
+        "skill": {
+            "type": "ATTACK",
+            "name": "アタック +10",
+            "details": "自身の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "パワフル＆チャーミング",
+        "characterName": "鏡音リン",
+        "rarity": "SR",
+        "attribute": "LEAF",
+        "cardNumber": "1.05-E-0021",
+        "skill": {
+            "type": "BOOST",
+            "name": "リーフブースト +10",
+            "details": "属性【LEAF】かつ【ATTACK】の攻撃力10％アップ"
+        }
+    },
+    {
+        "cardName": "ONGEKI Sound Collection 01",
+        "characterName": "星咲 あかり",
+        "rarity": "SSR",
+        "attribute": "FIRE",
+        "cardNumber": "1.05-P-0001",
+        "skill": {
+            "type": "BOOST",
+            "name": "ボスブースト +16",
+            "details": "バトル後半で、【ATTACK】全員の攻撃力16％アップ"
         }
     }
 ]
