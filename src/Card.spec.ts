@@ -78,6 +78,17 @@ describe('Card', () => {
             card.skill.choukaika = true
             expect(card.calculateSelfIncreasePercent(false)).to.equal(19)
         })
+        it('should return SelfIncrease percent accounting for both mains and additional skill', () => {
+            const card = new Card(Rarity.SSR, 70, true)
+            card.attribute = Attribute.AQUA
+            card.skill = new Skill(SkillType.ATTACK, 12, false)
+            card.additionalSkill = new Skill(SkillType.ATTACK, 3, true)
+
+            // Not boss, should be 12 only
+            expect(card.calculateSelfIncreasePercent(false)).to.equal(12)
+            // Boss, should be 12 + 3
+            expect(card.calculateSelfIncreasePercent(true)).to.equal(15)
+        })
     })
     describe('calculateBoostPercents()', () => {
         it('should return boost percent for each card in deck', () => {
@@ -264,6 +275,28 @@ describe('Card', () => {
             expect(card.characterName).to.equal('星咲 あかり')
             expect(card.skill).to.deep.equal(new Skill(SkillType.ATTACK, 5, true))
         })
+        it('should return new instance based on card data for card with additional skill', () => {
+            const card = Card.fromJson(
+                {
+                    characterName: "井之原 小星",
+                    rarity: "SSR",
+                    attribute: "LEAF",
+                    cardNumber: "1.05-0030",
+                    skill: {
+                        type: "ATTACK",
+                        name: "小星フュージョン +5（ボスアタック +2）",
+                        details: "【井之原 小星】のカード1枚につき、自身の攻撃力5％アップ\nバトル後半で自身の攻撃力2％アップ"
+                    }
+                }
+            )
+
+            expect(card.rarity).to.equal(Rarity.SSR)
+            expect(card.event).to.be.false
+            expect(card.attribute).to.equal(Attribute.LEAF)
+            expect(card.characterName).to.equal('井之原 小星')
+            expect(card.skill).to.deep.equal(new Skill(SkillType.ATTACK, 5, false, new CardMatcher(null, null, ["井之原 小星"])))
+            expect(card.additionalSkill).to.deep.equal(new Skill(SkillType.ATTACK, 2, true))
+        })
         it('should create special skill with 25 percentageChoukaika for N cards', () => {
             const card = Card.fromJson(
                 {
@@ -355,10 +388,6 @@ describe('Card', () => {
         })
         it('should create cards instances from json file', () => {
             for(let card of cards) {
-                // Ignore new cards for now
-                if (card.cardNumber.startsWith("1.05")){
-                    continue
-                }
                 Card.fromJson(card)
             }
         })

@@ -1,6 +1,8 @@
 import { Card, Deck, Attribute } from './Card'
 import { CardMatcher } from './CardMatcher'
 
+import characters from '../characters.json'
+
 export enum SkillType {
     GUARD = 1,
     ASSIST,
@@ -121,10 +123,120 @@ export class Skill {
     }
 
     /**
+     * Parse attack skill name and return extracted skill specs
+     * @param skillName Skill name string
+     * @return skill Specs (percentage, boss, condition)
+     */
+    private static parseAttackSkillName(skillName: string): SkillSpec {
+        const regex = /^(?:ノーダメ|まんたん)?(ボス)?(?:(.+?)フュージョン|アタック) \+(\d+)(?:（危）)?$/
+        const res = regex.exec(skillName)
+        if (!res) {
+            throw new Error("Could not parse skill name: " + skillName)
+        }
+        // Boss 
+        const boss = !!res[1]
+
+        // Condition multiplier
+        let condition
+        if (res[2]) {
+            // Convert first name to full name
+            const character = characters.find(e => e.firstName === res[2])
+
+            if (!character) {
+                throw new Error("Could not find character: " + res[2])
+            }
+
+            condition = new CardMatcher(null, null, [character.lastName + " " + character.firstName])
+        }
+
+        // Percentage
+        const percentage = +res[3]
+
+        return {
+            boss,
+            percentage,
+            condition
+        }
+    }
+
+    /**
+     * Parse attack skill details and return extracted skill spec
+     * @param skillDetails skill details string
+     * @return skill specs (percentage, boss, condition)
+     */
+    private static parseAttackSkillDetails(skillDetails: string): SkillSpec  {
+        const regex = /^(?:ダメージカウント0の時、|ライフ100％時、|(バトル後半で、))?(?:【(.*?)】のカード1枚につき、)?\n?自身の攻撃力?(\d+)％アップ(?:\n被弾時のダメージが\d+倍になる)?$/
+        const res = regex.exec(skillDetails)
+        if (!res) {
+            throw new Error("Could not parse card skill details: " + skillDetails)
+        }
+        // Boss 
+        const boss = !!res[1]
+
+        // Condition multiplier
+        const condition = res[2] ? new CardMatcher(null, null, [res[2]]) : undefined
+
+        // Percentage
+        const percentage = +res[3]
+
+        return {
+            boss,
+            percentage,
+            condition
+        }
+    }
+
+    /**
+     * Parse boost skill details string and return extracted skill spec
+     * @param skillDetails skill details string
+     * @return skill specs (percentage, boss, condition)
+     */
+    private static parseBoostSkillDetails(skillDetails: string): SkillSpec  {
+        const regex = /^(?:ダメージカウント0の時、|ライフ100％時、|(バトル後半で、))?\n?(?:属性【(FIRE|LEAF|AQUA)】|【(.*?)】(?:と【(.*?)】)?)??(?:かつ)?(【ATTACK】)?(?:全員)?の攻撃力?(\d+)％アップ(?:\n被弾時のダメージが\d+倍になる)?$/
+        const res = regex.exec(skillDetails)
+        if (!res) {
+            throw new Error("Could not parse card skill: " + skillDetails)
+        }
+        // Boss 
+        const boss = !!res[1]
+
+        // Attribute condition
+        let attribute = null
+        if (res[2]) {
+            attribute = Attribute[res[2]]
+        }
+        // Character condition
+        let characters = null
+        if (res[3]) {
+            characters = [res[3]]
+            if (res[4]) {
+                characters.push(res[4])
+            }
+        }
+        // Skill type condition
+        let skillType = null
+        if (res[5]) {
+            skillType = SkillType.ATTACK
+        }
+
+        const condition = new CardMatcher(skillType, attribute, characters)
+
+        // Percentage
+        const percentage = +res[6]
+
+        return {
+            boss,
+            percentage,
+            condition
+        }
+    }
+
+
+    /**
      * Create instance from json data
      * Percentage, boss and condition will be deduced from skill details text.
      * @param data Skill data from json
-     * @return A new instance of Skill
+     * @return An array containing one or two new instance of Skill
      */
     static fromJson(data: SkillJson) {
         // Convert string to enum
@@ -133,9 +245,8 @@ export class Skill {
             throw new Error("Invalid type: " + data.type)
         }
 
-        let percentage: number
-        let boss: boolean
-        let condition: CardMatcher
+        let mainSkillSpec: SkillSpec
+        let secondarySkillSpec: SkillSpec
 
         switch (type) {
             case SkillType.GUARD:
@@ -144,66 +255,38 @@ export class Skill {
                 if (!res) {
                     throw new Error("Could not parse card skill: " + data.details)
                 }
-                percentage = +res[1]
+                mainSkillSpec = {
+                    percentage: +res[1],
+                    boss: false,
+                    condition: undefined
+                }
                 break
             }
             case SkillType.ATTACK: {
-                const regex = /^(?:ダメージカウント0の時、|ライフ100％時、|(バトル後半で、))?(?:【(.*?)】のカード1枚につき、)?\n?自身の攻撃力?(\d+)％アップ(?:\n被弾時のダメージが\d+倍になる)?$/
-                const res = regex.exec(data.details)
+                const res = /^(.+?)(?:（(.+)）)?$/.exec(data.name)
                 if (!res) {
-                    throw new Error("Could not parse card skill: " + data.details)
+                    throw new Error("Could not parse card skill name: " + data.name)
                 }
-                // Boss 
-                boss = !!res[1]
-
-                // Condition multiplier
-                if (res[2]) {
-                    condition = new CardMatcher(null, null, [res[2]])
+                mainSkillSpec = Skill.parseAttackSkillName(res[1])
+                if (res[2] && res[2] != "危" ) {
+                    secondarySkillSpec = Skill.parseAttackSkillName(res[2])
                 }
-                // Percentage
-                percentage = +res[3]            
                 break
             }
             case SkillType.BOOST: {
-                const regex = /^(?:ダメージカウント0の時、|ライフ100％時、|(バトル後半で、))?\n?(?:属性【(FIRE|LEAF|AQUA)】|【(.*?)】(?:と【(.*?)】)?)??(?:かつ)?(【ATTACK】)?の攻撃力?(\d+)％アップ(?:\n被弾時のダメージが\d+倍になる)?$/
-                const res = regex.exec(data.details)
-                if (!res) {
-                    throw new Error("Could not parse card skill: " + data.details)
-                }
-                // Boss 
-                boss = !!res[1]
-
-                // Attribute condition
-                let attribute = null
-                if (res[2]) {
-                    attribute = Attribute[res[2]]
-                }
-                // Character condition
-                let characters = null
-                if (res[3]) {
-                    characters = [res[3]]
-                    if (res[4]) {
-                        characters.push(res[4])
-                    }
-                }
-                // Skill type condition
-                let skillType = null
-                if (res[5]) {
-                    skillType = SkillType.ATTACK
-                }
-
-                condition = new CardMatcher(skillType, attribute, characters)
-
-                // Percentage
-                percentage = +res[6]
-
+                mainSkillSpec = Skill.parseBoostSkillDetails(data.details)
             }
+        }
+        const mainSkill = new this(type, mainSkillSpec.percentage, mainSkillSpec.boss, mainSkillSpec.condition)
+
+        if (secondarySkillSpec) {
+            const secondarySkill = new this(type, secondarySkillSpec.percentage, secondarySkillSpec.boss, secondarySkillSpec.condition)
+            return [mainSkill, secondarySkill]
+        } else {
+            return [mainSkill]
 
         }
-
-        return new this(type, percentage, boss, condition)
     }
-
 }
 
 
@@ -211,4 +294,10 @@ export interface SkillJson {
     type: string
     name: string
     details: string
+}
+
+interface SkillSpec {
+    percentage: number
+    boss: boolean
+    condition: CardMatcher
 }

@@ -111,196 +111,243 @@ describe('Skill', () => {
     })
     describe('fromJson()', () => {
         it('should correctly parse and return attack skill', () => {
-            const skill = Skill.fromJson({
+            const skills = Skill.fromJson({
                 type: "ATTACK",
                 name: "アタック +15",
                 details: "自身の攻撃力15％アップ"
             })
 
-            expect(skill.type).to.equal(SkillType.ATTACK)
-            expect(skill.percentageBase).to.equal(15)
-            expect(skill.boss).to.be.false
-            expect(skill.condition).to.be.undefined
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].type).to.equal(SkillType.ATTACK)
+            expect(skills[0].percentageBase).to.equal(15)
+            expect(skills[0].boss).to.be.false
+            expect(skills[0].condition).to.be.undefined
         })
         it('should correctly parse and return attack boss skill', () => {
 
-            const skillBoss = Skill.fromJson({
+            const skills = Skill.fromJson({
                 type: "ATTACK",
                 name: "ボスアタック +5",
                 details: "バトル後半で、自身の攻撃力5％アップ"
             })
 
-            expect(skillBoss.percentageBase).to.equal(5)
-            expect(skillBoss.boss).to.be.true
-            expect(skillBoss.condition).to.be.undefined
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].percentageBase).to.equal(5)
+            expect(skills[0].boss).to.be.true
+            expect(skills[0].condition).to.be.undefined
         })
         it('should correctly parse and return attack skill with condition', () => {
-            const skillWithCondition = Skill.fromJson({
+            const skills = Skill.fromJson({
                 type: "ATTACK",
                 name: "ボス莉玖フュージョン +7",
                 details: "バトル後半で、【結城 莉玖】のカード1枚につき、\n自身の攻撃力7％アップ"
             })
 
-            expect(skillWithCondition.percentageBase).to.equal(7)
-            expect(skillWithCondition.boss).to.be.true
-            expect(skillWithCondition.condition).to.deep.equal(new CardMatcher(null, null, ["結城 莉玖"]))
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].percentageBase).to.equal(7)
+            expect(skills[0].boss).to.be.true
+            expect(skills[0].condition).to.deep.equal(new CardMatcher(null, null, ["結城 莉玖"]))
         })
         it('should correctly parse and return attack no damage skill', () => {
-            const skillNoDamage = Skill.fromJson({
+            const skills = Skill.fromJson({
                 type: "ATTACK",
                 name: "ノーダメアタック +14",
                 details: "ダメージカウント0の時、自身の攻撃14％アップ"
             })
 
-            expect(skillNoDamage.percentageBase).to.equal(14)
-            expect(skillNoDamage.boss).to.be.false
-            expect(skillNoDamage.condition).to.be.undefined
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].percentageBase).to.equal(14)
+            expect(skills[0].boss).to.be.false
+            expect(skills[0].condition).to.be.undefined
         })
         it('should correctly parse and return attack mantan skill', () => {
-            const skillMantan = Skill.fromJson({
+            const skills = Skill.fromJson({
                 type: "ATTACK",
                 name: "まんたんアタック +11",
                 details: "ライフ100％時、自身の攻撃力11％アップ"
             })
 
-            expect(skillMantan.percentageBase).to.equal(11)
-            expect(skillMantan.boss).to.be.false
-            expect(skillMantan.condition).to.be.undefined
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].percentageBase).to.equal(11)
+            expect(skills[0].boss).to.be.false
+            expect(skills[0].condition).to.be.undefined
         })
         it('should correctly parse and return attack danger skill', () => {
-            const skillDanger = Skill.fromJson({
+            const skills = Skill.fromJson({
                 type: "ATTACK",
                 name: "アタック +20（危）",
                 details: "自身の攻撃力20％アップ\n被弾時のダメージが2倍になる"
             })
 
-            expect(skillDanger.percentageBase).to.equal(20)
-            expect(skillDanger.boss).to.be.false
-            expect(skillDanger.condition).to.be.undefined
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].percentageBase).to.equal(20)
+            expect(skills[0].boss).to.be.false
+            expect(skills[0].condition).to.be.undefined
         })
         it('should correctly parse and return guard skill', () => {
-            const skill = Skill.fromJson({
+            const skills = Skill.fromJson({
                 type: "GUARD",
                 name: "リーフガード +20",
                 details: "属性【LEAF】からのダメージ20％軽減\n自身の攻撃力3％アップ"
             })
 
-            expect(skill.type).to.equal(SkillType.GUARD)
-            expect(skill.percentageBase).to.equal(3)
-            expect(skill.boss).to.be.false
-            expect(skill.condition).to.be.undefined
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].type).to.equal(SkillType.GUARD)
+            expect(skills[0].percentageBase).to.equal(3)
+            expect(skills[0].boss).to.be.false
+            expect(skills[0].condition).to.be.undefined
         })
         it('should correctly parse and return assist skill', () => {
-            const skill = Skill.fromJson({
+            const skills = Skill.fromJson({
                 type: "ASSIST",
                 name: "SIDE-LRアシスト +5",
                 details: "ノーツ【SIDE】を自動で攻撃する\n自身の攻撃力5％アップ"
             })
 
-            expect(skill.type).to.equal(SkillType.ASSIST)
-            expect(skill.percentageBase).to.equal(5)
-            expect(skill.boss).to.be.false
-            expect(skill.condition).to.be.undefined
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].type).to.equal(SkillType.ASSIST)
+            expect(skills[0].percentageBase).to.equal(5)
+            expect(skills[0].boss).to.be.false
+            expect(skills[0].condition).to.be.undefined
         })
         it('should correctly parse and return boost skill', () => {
-            const skill = Skill.fromJson({
+            const skills = Skill.fromJson({
                 type: "BOOST",
                 name: "ブースト +5",
                 details: "【ATTACK】の攻撃力5％アップ"
             })
 
-            expect(skill.type).to.equal(SkillType.BOOST)
-            expect(skill.percentageBase).to.equal(5)
-            expect(skill.boss).to.be.false
-            expect(skill.condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, null, null))
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].type).to.equal(SkillType.BOOST)
+            expect(skills[0].percentageBase).to.equal(5)
+            expect(skills[0].boss).to.be.false
+            expect(skills[0].condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, null, null))
         })
         it('should correctly parse and return boost skill with attribute', () => {
-            const skill = Skill.fromJson({
+            const skills = Skill.fromJson({
                 type: "BOOST",
                 name: "ファイアブースト +10",
                 details: "属性【FIRE】かつ【ATTACK】の攻撃力10％アップ"
             })
 
-            expect(skill.percentageBase).to.equal(10)
-            expect(skill.boss).to.be.false
-            expect(skill.condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, Attribute.FIRE, null))
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].percentageBase).to.equal(10)
+            expect(skills[0].boss).to.be.false
+            expect(skills[0].condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, Attribute.FIRE, null))
         })
         it('should correctly parse and return boost boss skill with attribute', () => {
-            const skill = Skill.fromJson({
+            const skills = Skill.fromJson({
                 type: "BOOST",
                 name: "ボスアクアブースト +17",
                 details: "バトル後半で、\n属性【AQUA】かつ【ATTACK】の攻撃力17％アップ"
             })
 
-            expect(skill.percentageBase).to.equal(17)
-            expect(skill.boss).to.be.true
-            expect(skill.condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null))
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].percentageBase).to.equal(17)
+            expect(skills[0].boss).to.be.true
+            expect(skills[0].condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null))
         })
         it('should correctly parse and return boost skill with character', () => {
-            const skill = Skill.fromJson({
+            const skills = Skill.fromJson({
                 type: "BOOST",
                 name: "美海ブースト +15",
                 details: "【日向 美海】かつ【ATTACK】の攻撃力15％アップ"
             })
 
-            expect(skill.percentageBase).to.equal(15)
-            expect(skill.boss).to.be.false
-            expect(skill.condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, null, ['日向 美海']))
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].percentageBase).to.equal(15)
+            expect(skills[0].boss).to.be.false
+            expect(skills[0].condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, null, ['日向 美海']))
         })
         it('should correctly parse and return boost skill with character but not skill type', () => {
-            const skill = Skill.fromJson({
+            const skills = Skill.fromJson({
                 type: "BOOST",
                 name: "ボス茜ブースト +15",
                 details: "バトル後半で、【逢坂 茜】の攻撃力15％アップ"
             })
 
-            expect(skill.percentageBase).to.equal(15)
-            expect(skill.boss).to.be.true
-            expect(skill.condition).to.deep.equal(new CardMatcher(null, null, ['逢坂 茜']))
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].percentageBase).to.equal(15)
+            expect(skills[0].boss).to.be.true
+            expect(skills[0].condition).to.deep.equal(new CardMatcher(null, null, ['逢坂 茜']))
         })
         it('should correctly parse and return boost skill with 2 characters', () => {
-            const skill = Skill.fromJson({
+            const skills = Skill.fromJson({
                 type: "BOOST",
                 name: "柚子＆葵ブースト +5",
                 details: "【藤沢 柚子】と【三角 葵】の攻撃力5％アップ"
             })
 
-            expect(skill.percentageBase).to.equal(5)
-            expect(skill.boss).to.be.false
-            expect(skill.condition).to.deep.equal(new CardMatcher(null, null, ['藤沢 柚子','三角 葵']))
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].percentageBase).to.equal(5)
+            expect(skills[0].boss).to.be.false
+            expect(skills[0].condition).to.deep.equal(new CardMatcher(null, null, ['藤沢 柚子','三角 葵']))
         })
         it('should correctly parse and return boost skill no damage', () => {
-            const skill = Skill.fromJson({
+            const skills = Skill.fromJson({
                 type: "BOOST",
                 name: "ノーダメブースト +14",
                 details: "ダメージカウント0の時、【ATTACK】の攻撃14％アップ"
             })
 
-            expect(skill.percentageBase).to.equal(14)
-            expect(skill.boss).to.be.false
-            expect(skill.condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, null, null))
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].percentageBase).to.equal(14)
+            expect(skills[0].boss).to.be.false
+            expect(skills[0].condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, null, null))
         })
         it('should correctly parse and return boost skill mantan', () => {
-            const skill = Skill.fromJson({
+            const skills = Skill.fromJson({
                 type: "BOOST",
                 name: "まんたんブースト +12",
                 details: "ライフ100％時、【ATTACK】の攻撃12％アップ"
             })
 
-            expect(skill.percentageBase).to.equal(12)
-            expect(skill.boss).to.be.false
-            expect(skill.condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, null, null))
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].percentageBase).to.equal(12)
+            expect(skills[0].boss).to.be.false
+            expect(skills[0].condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, null, null))
         })
         it('should correctly parse and return boost skill danger', () => {
-            const skill = Skill.fromJson({
+            const skills = Skill.fromJson({
                 type: "BOOST",
                 name: "ブースト +12（危）",
                 details: "【ATTACK】の攻撃力12％アップ\n被弾時のダメージが2倍になる"
             })
 
-            expect(skill.percentageBase).to.equal(12)
-            expect(skill.boss).to.be.false
-            expect(skill.condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, null, null))
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].percentageBase).to.equal(12)
+            expect(skills[0].boss).to.be.false
+            expect(skills[0].condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, null, null))
+        })
+        it('should correctly parse and return skill with secondary skill', () => {
+            const skills = Skill.fromJson({
+                type: "ATTACK",
+                name: "ボスアタック +14（ノーダメボスアタック +3）",
+                details: "バトル後半で、自身の攻撃力14％アップ\nダメージカウント0の時、追加で自身の攻撃力3％アップ"
+            })
+
+            expect(skills).to.have.lengthOf(2)
+            expect(skills[0].percentageBase).to.equal(14)
+            expect(skills[0].boss).to.be.true
+            expect(skills[0].condition).to.be.undefined
+            expect(skills[1].percentageBase).to.equal(3)
+            expect(skills[1].boss).to.be.true
+            expect(skills[1].condition).to.be.undefined
+        })
+        it('should correctly parse and return fusion skill with secondary skill', () => {
+            const skills = Skill.fromJson({
+                type: "ATTACK",
+                name: "小星フュージョン +5（ボスアタック +2）",
+                details: "【井之原 小星】のカード1枚につき、自身の攻撃力5％アップ\nバトル後半で自身の攻撃力2％アップ"
+            })
+
+            expect(skills).to.have.lengthOf(2)
+            expect(skills[0].percentageBase).to.equal(5)
+            expect(skills[0].boss).to.be.false
+            expect(skills[0].condition).to.deep.equal(new CardMatcher(null, null, ["井之原 小星"]))
+            expect(skills[1].percentageBase).to.equal(2)
+            expect(skills[1].boss).to.be.true
+            expect(skills[1].condition).to.be.undefined
         })
         it('should throw an error when skill details is not valid', () => {
             expect(Skill.fromJson.bind(Skill, {

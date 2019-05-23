@@ -21,8 +21,9 @@ export class Card {
     event: boolean
     // FIRE, AQUA or LEAF
     attribute: Attribute
-    // Card skill
+    // Card skills
     skill: Skill
+    additionalSkill: Skill
     // Character full name
     characterName: string
 
@@ -85,7 +86,12 @@ export class Card {
      * @return Self increase in percent
      */
     calculateSelfIncreasePercent(boss: boolean): number {
-        return this.skill.calculateSelfIncreasePercent(boss, this.deck)
+        let result = this.skill.calculateSelfIncreasePercent(boss, this.deck)
+
+        if (this.additionalSkill) {
+            result += this.additionalSkill.calculateSelfIncreasePercent(boss, this.deck)
+        }
+        return result
     }
 
     /**
@@ -169,9 +175,12 @@ export class Card {
         }
         card.event = !!cardNumberRes[1]
 
-        // Skill
-        card.skill = Skill.fromJson(data.skill)
-
+        // Skills
+        const skills = Skill.fromJson(data.skill)
+        card.skill =  skills[0]
+        if (skills.length > 1) {
+            card.additionalSkill = skills[1]
+        }
         // Special case for N cards
         if (card.rarity === Rarity.N) {
             card.skill.percentageChoukaika = 25
