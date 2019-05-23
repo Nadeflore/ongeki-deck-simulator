@@ -148,6 +148,18 @@ describe('Skill', () => {
             expect(skills[0].boss).to.be.true
             expect(skills[0].condition).to.deep.equal(new CardMatcher(null, null, ["結城 莉玖"]))
         })
+        it('should correctly parse and return attack skill with 2 characters condition', () => {
+            const skills = Skill.fromJson({
+                type: "ATTACK",
+                name: "春菜＆彩華フュージョン +3",
+                details: "【桜井 春菜】か【早乙女 彩華】のカード1枚につき、\n自身の攻撃力3％アップ"
+            })
+
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].percentageBase).to.equal(3)
+            expect(skills[0].boss).to.be.false
+            expect(skills[0].condition).to.deep.equal(new CardMatcher(null, null, ["桜井 春菜", "早乙女 彩華"]))
+        })
         it('should correctly parse and return attack no damage skill', () => {
             const skills = Skill.fromJson({
                 type: "ATTACK",

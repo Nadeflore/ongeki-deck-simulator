@@ -1,7 +1,7 @@
 import { Card, Deck, Attribute } from './Card'
 import { CardMatcher } from './CardMatcher'
 
-import characters from '../characters.json'
+import { convertLastNameToFullName } from './charactersUtils'
 
 export enum SkillType {
     GUARD = 1,
@@ -128,7 +128,7 @@ export class Skill {
      * @return skill Specs (percentage, boss, condition)
      */
     private static parseAttackSkillName(skillName: string): SkillSpec {
-        const regex = /^(?:ノーダメ|まんたん)?(ボス)?(?:(.+?)フュージョン|アタック) \+(\d+)(?:（危）)?$/
+        const regex = /^(?:ノーダメ|まんたん)?(ボス)?(?:(.+?)(?:＆(.+?))?フュージョン|アタック) \+(\d+)(?:（危）)?$/
         const res = regex.exec(skillName)
         if (!res) {
             throw new Error("Could not parse skill name: " + skillName)
@@ -136,21 +136,21 @@ export class Skill {
         // Boss 
         const boss = !!res[1]
 
-        // Condition multiplier
+        // Character condition multiplier
         let condition
         if (res[2]) {
-            // Convert first name to full name
-            const character = characters.find(e => e.firstName === res[2])
-
-            if (!character) {
-                throw new Error("Could not find character: " + res[2])
+            const firstCharacterName = convertLastNameToFullName(res[2])
+            let characters = [firstCharacterName]
+            if (res[3]) {
+                const secondCharacterName = convertLastNameToFullName(res[3])
+                characters.push(secondCharacterName)
             }
 
-            condition = new CardMatcher(null, null, [character.lastName + " " + character.firstName])
+            condition = new CardMatcher(null, null, characters)
         }
 
         // Percentage
-        const percentage = +res[3]
+        const percentage = +res[4]
 
         return {
             boss,
