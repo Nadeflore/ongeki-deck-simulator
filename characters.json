@@ -137,6 +137,40 @@
     "workTitle": "東方紅魔郷"
   },
   {
+    "id": 2008,
+    "attribute": "FIRE",
+    "name": "橙",
+    "workTitle": "東方妖々夢"
+  },
+  {
+    "id": 2009,
+    "attribute": "LEAF",
+    "lastName": "魂魄",
+    "firstName": "妖夢",
+    "workTitle": "東方妖々夢"
+  },
+  {
+    "id": 2010,
+    "attribute": "LEAF",
+    "lastName": "西行寺",
+    "firstName": "幽々子",
+    "workTitle": "東方妖々夢"
+  },
+  {
+    "id": 2011,
+    "attribute": "AQUA",
+    "lastName": "八雲",
+    "firstName": "藍",
+    "workTitle": "東方妖々夢"
+  },
+  {
+    "id": 2011,
+    "attribute": "AQUA",
+    "lastName": "八雲",
+    "firstName": "紫",
+    "workTitle": "東方妖々夢"
+  },
+  {
     "id": 5000,
     "attribute": "AQUA",
     "name": "初音ミク",
@@ -250,5 +284,29 @@
     "lastName": "佐天",
     "firstName": "涙子",
     "workTitle": "とある科学の超電磁砲S"
+  },
+  {
+    "id": 22001,
+    "attribute": "AQUA",
+    "name": "ペコリーヌ",
+    "workTitle": "プリンセスコネクト！Re:Dive"
+  },
+  {
+    "id": 22002,
+    "attribute": "AQUA",
+    "name": "コッコロ",
+    "workTitle": "プリンセスコネクト！Re:Dive"
+  },
+  {
+    "id": 22003,
+    "attribute": "AQUA",
+    "name": "キャル",
+    "workTitle": "プリンセスコネクト！Re:Dive"
+  },
+  {
+    "id": 22004,
+    "attribute": "LEAF",
+    "name": "アリサ",
+    "workTitle": "プリンセスコネクト！Re:Dive"
   }
 ]
