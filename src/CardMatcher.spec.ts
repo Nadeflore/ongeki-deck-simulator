@@ -3,7 +3,7 @@ import { Skill, SkillType } from './Skill'
 import { CardMatcher } from './CardMatcher'
 
 import { expect } from 'chai'
-import 'mocha';
+import 'mocha'
 
 describe('CardMatcher', () => {
     describe('match()', () => {

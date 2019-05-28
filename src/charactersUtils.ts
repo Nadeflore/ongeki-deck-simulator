@@ -8,16 +8,16 @@ import characters from '../characters.json'
  * @throws Error when character is not found
  */
 export function convertLastNameToFullName(name: string) {
-    const character = characters.find(e => e.firstName === name || e.name === name)
+    const character = characters.find((e) => e.firstName === name || e.name === name)
 
     if (!character) {
-        throw new Error("Could not find character: " + name)
+        throw new Error('Could not find character: ' + name)
     }
 
     if (character.name) {
         return character.name
     } else {
-        return character.lastName + " " + character.firstName
+        return character.lastName + ' ' + character.firstName
     }
 }
 

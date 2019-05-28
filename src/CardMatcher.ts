@@ -6,11 +6,11 @@ import { SkillType } from './Skill'
  */
 export class CardMatcher {
     // Card should have same skill type
-    skillType: SkillType
+    public skillType: SkillType
     // Card should have same attribute
-    attribute: Attribute
+    public attribute: Attribute
     // Card should math one of the names
-    characterNames: string[]
+    public characterNames: string[]
 
     constructor(skillType: SkillType, attribute: Attribute, characterNames: string[]) {
         this.skillType = skillType
@@ -23,7 +23,7 @@ export class CardMatcher {
      * @param card Card to check
      * @return True if card match conditions
      */
-    match(card: Card) {
+    public match(card: Card) {
         if (this.skillType && card.skill.type !== this.skillType) {
             return false
         }
