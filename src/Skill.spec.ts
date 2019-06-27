@@ -196,6 +196,18 @@ describe('Skill', () => {
             expect(skills[0].boss).to.be.false
             expect(skills[0].condition).to.be.undefined
         })
+        it('should correctly parse and return attack low miss skill', () => {
+            const skills = Skill.fromJson({
+                type: 'ATTACK',
+                name: 'ローミスアタック +10',
+                details: 'MISS数10以下の時、自身の攻撃力10％アップ',
+            })
+
+            expect(skills).to.have.lengthOf(1)
+            expect(skills[0].percentageBase).to.equal(10)
+            expect(skills[0].boss).to.be.false
+            expect(skills[0].condition).to.be.undefined
+        })
         it('should correctly parse and return guard skill', () => {
             const skills = Skill.fromJson({
                 type: 'GUARD',

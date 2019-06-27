@@ -83,7 +83,7 @@ export class Skill {
      * @return skill Specs (percentage, boss, condition)
      */
     private static parseAttackSkillName(skillName: string): SkillSpec {
-        const regex = /^(?:ノーダメ|まんたん)?(ボス)?(?:(.+?)(?:＆(.+?))?フュージョン|アタック) \+(\d+)(?:（危）)?$/
+        const regex = /^(?:ノーダメ|まんたん|ローミス)?(ボス)?(?:(.+?)(?:＆(.+?))?フュージョン|アタック) \+(\d+)(?:（危）)?$/
         const res = regex.exec(skillName)
         if (!res) {
             throw new Error('Could not parse skill name: ' + skillName)
@@ -121,7 +121,7 @@ export class Skill {
      */
     private static parseAttackSkillDetails(skillDetails: string): SkillSpec  {
         // tslint:disable-next-line:max-line-length
-        const regex = /^(?:ダメージカウント0の時、|ライフ100％時、|(バトル後半で、))?(?:【(.*?)】のカード1枚につき、)?\n?自身の攻撃力?(\d+)％アップ(?:\n被弾時のダメージが\d+倍になる)?$/
+        const regex = /^(?:ダメージカウント0の時、|ライフ100％時、|MISS数10以下の時、|(バトル後半で、))?(?:【(.*?)】のカード1枚につき、)?\n?自身の攻撃力?(\d+)％アップ(?:\n被弾時のダメージが\d+倍になる)?$/
         const res = regex.exec(skillDetails)
         if (!res) {
             throw new Error('Could not parse card skill details: ' + skillDetails)
