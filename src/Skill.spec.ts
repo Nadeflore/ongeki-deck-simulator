@@ -208,6 +208,36 @@ describe('Skill', () => {
             expect(skills[0].boss).to.be.false
             expect(skills[0].condition).to.be.undefined
         })
+        it('should correctly parse and return attack skill with secondary skill', () => {
+            const skills = Skill.fromJson({
+                type: 'ATTACK',
+                name: 'ボスアタック +14（ノーダメボスアタック +3）',
+                details: 'バトル後半で、自身の攻撃力14％アップ\nダメージカウント0の時、追加で自身の攻撃力3％アップ',
+            })
+
+            expect(skills).to.have.lengthOf(2)
+            expect(skills[0].percentageBase).to.equal(14)
+            expect(skills[0].boss).to.be.true
+            expect(skills[0].condition).to.be.undefined
+            expect(skills[1].percentageBase).to.equal(3)
+            expect(skills[1].boss).to.be.true
+            expect(skills[1].condition).to.be.undefined
+        })
+        it('should correctly parse and return fusion skill with secondary skill', () => {
+            const skills = Skill.fromJson({
+                type: 'ATTACK',
+                name: '小星フュージョン +5（ボスアタック +2）',
+                details: '【井之原 小星】のカード1枚につき、自身の攻撃力5％アップ\nバトル後半で自身の攻撃力2％アップ',
+            })
+
+            expect(skills).to.have.lengthOf(2)
+            expect(skills[0].percentageBase).to.equal(5)
+            expect(skills[0].boss).to.be.false
+            expect(skills[0].condition).to.deep.equal(new CardMatcher(null, null, ['井之原 小星']))
+            expect(skills[1].percentageBase).to.equal(2)
+            expect(skills[1].boss).to.be.true
+            expect(skills[1].condition).to.be.undefined
+        })
         it('should correctly parse and return guard skill', () => {
             const skills = Skill.fromJson({
                 type: 'GUARD',
@@ -343,34 +373,23 @@ describe('Skill', () => {
             expect(skills[0].boss).to.be.false
             expect(skills[0].condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, null, null))
         })
-        it('should correctly parse and return skill with secondary skill', () => {
+        it('should correctly parse and return boost skill with secondary attack skill', () => {
             const skills = Skill.fromJson({
-                type: 'ATTACK',
-                name: 'ボスアタック +14（ノーダメボスアタック +3）',
-                details: 'バトル後半で、自身の攻撃力14％アップ\nダメージカウント0の時、追加で自身の攻撃力3％アップ',
+                type: 'BOOST',
+                name: 'アクアブースト +10（アタック +3）',
+                details: '属性【AQUA】かつ【ATTACK】の攻撃力10％アップ\n自身の攻撃力3％アップ'
             })
 
             expect(skills).to.have.lengthOf(2)
-            expect(skills[0].percentageBase).to.equal(14)
-            expect(skills[0].boss).to.be.true
-            expect(skills[0].condition).to.be.undefined
-            expect(skills[1].percentageBase).to.equal(3)
-            expect(skills[1].boss).to.be.true
-            expect(skills[1].condition).to.be.undefined
-        })
-        it('should correctly parse and return fusion skill with secondary skill', () => {
-            const skills = Skill.fromJson({
-                type: 'ATTACK',
-                name: '小星フュージョン +5（ボスアタック +2）',
-                details: '【井之原 小星】のカード1枚につき、自身の攻撃力5％アップ\nバトル後半で自身の攻撃力2％アップ',
-            })
-
-            expect(skills).to.have.lengthOf(2)
-            expect(skills[0].percentageBase).to.equal(5)
+            // Main boost skill
+            expect(skills[0].type).to.equal(SkillType.BOOST)
+            expect(skills[0].percentageBase).to.equal(10)
             expect(skills[0].boss).to.be.false
-            expect(skills[0].condition).to.deep.equal(new CardMatcher(null, null, ['井之原 小星']))
-            expect(skills[1].percentageBase).to.equal(2)
-            expect(skills[1].boss).to.be.true
+            expect(skills[0].condition).to.deep.equal(new CardMatcher(SkillType.ATTACK, Attribute.AQUA, null))
+            // Secondary attack skill
+            expect(skills[1].type).to.equal(SkillType.ATTACK)
+            expect(skills[1].percentageBase).to.equal(3)
+            expect(skills[1].boss).to.be.false
             expect(skills[1].condition).to.be.undefined
         })
         it('should throw an error when skill details is not valid', () => {
